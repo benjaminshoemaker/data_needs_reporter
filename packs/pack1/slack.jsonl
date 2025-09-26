@@ -1,0 +1,288 @@
+{"actor": "u_alex", "channel": "slack", "id": "s_0286", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0285", "when": "2025-09-19T22:45:24Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0097", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0095", "when": "2025-09-19T23:03:09Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0179", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0178", "when": "2025-09-19T23:27:27Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0249", "labels": [], "referenced_query_id": null, "text": "Is the revenue metric delayed today?", "thread_id": null, "when": "2025-09-19T23:35:34Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0227", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0222", "when": "2025-09-20T00:59:27Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0021", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0020", "when": "2025-09-20T01:28:42Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0197", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0193", "when": "2025-09-20T01:44:01Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0245", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0244", "when": "2025-09-20T01:52:20Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0040", "labels": [], "referenced_query_id": null, "text": "Docs missing on customers table", "thread_id": null, "when": "2025-09-20T02:14:40Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0048", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0047", "when": "2025-09-20T02:18:03Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0154", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0148", "when": "2025-09-20T02:31:25Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0140", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0136", "when": "2025-09-20T03:15:54Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0244", "labels": [], "referenced_query_id": null, "text": "Docs missing on customers table", "thread_id": null, "when": "2025-09-20T03:24:12Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0020", "labels": [], "referenced_query_id": null, "text": "Access denied on dataset, who can help?", "thread_id": null, "when": "2025-09-20T04:22:18Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0083", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0078", "when": "2025-09-20T04:22:59Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0060", "labels": [], "referenced_query_id": null, "text": "Docs missing on customers table", "thread_id": null, "when": "2025-09-20T04:48:06Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0022", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0020", "when": "2025-09-20T04:55:15Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0077", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0072", "when": "2025-09-20T05:22:02Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0110", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0107", "when": "2025-09-20T05:45:13Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0183", "labels": [], "referenced_query_id": null, "text": "Docs missing on customers table", "thread_id": null, "when": "2025-09-20T06:59:49Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0099", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0098", "when": "2025-09-20T07:15:41Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0081", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0078", "when": "2025-09-20T07:18:12Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0063", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0060", "when": "2025-09-20T07:51:34Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0024", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0020", "when": "2025-09-20T08:43:56Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0109", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0107", "when": "2025-09-20T09:00:46Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0231", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0228", "when": "2025-09-20T09:44:41Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0252", "labels": [], "referenced_query_id": null, "text": "Docs missing on customers table", "thread_id": null, "when": "2025-09-20T10:09:07Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0028", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0026", "when": "2025-09-20T10:40:12Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0055", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0054", "when": "2025-09-20T10:42:07Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0263", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0261", "when": "2025-09-20T11:08:58Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0102", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0098", "when": "2025-09-20T13:08:45Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0259", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0253", "when": "2025-09-20T13:21:48Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0116", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0115", "when": "2025-09-20T14:24:04Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0283", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0277", "when": "2025-09-20T14:29:57Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0043", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0040", "when": "2025-09-20T14:53:48Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0205", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0203", "when": "2025-09-20T15:55:21Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0125", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0121", "when": "2025-09-20T16:17:15Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0208", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0207", "when": "2025-09-20T17:02:15Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0239", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0234", "when": "2025-09-20T17:18:39Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0016", "labels": [], "referenced_query_id": null, "text": "Is the revenue metric delayed today?", "thread_id": null, "when": "2025-09-20T17:43:15Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0027", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0026", "when": "2025-09-20T18:50:09Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0184", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0183", "when": "2025-09-20T20:05:01Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0085", "labels": [], "referenced_query_id": null, "text": "Query seems slow this morning", "thread_id": null, "when": "2025-09-20T20:40:18Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0276", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0274", "when": "2025-09-20T21:29:03Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0126", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0121", "when": "2025-09-20T21:35:19Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0035", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0032", "when": "2025-09-20T21:53:06Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0214", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0212", "when": "2025-09-20T21:53:56Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0045", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0044", "when": "2025-09-20T22:55:42Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0242", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0240", "when": "2025-09-21T00:37:47Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0033", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0032", "when": "2025-09-21T01:21:56Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0059", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0054", "when": "2025-09-21T01:28:16Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0260", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0253", "when": "2025-09-21T01:33:05Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0123", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0121", "when": "2025-09-21T01:47:52Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0267", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0265", "when": "2025-09-21T01:54:07Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0015", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0009", "when": "2025-09-21T02:31:03Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0191", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0189", "when": "2025-09-21T02:55:00Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0253", "labels": [], "referenced_query_id": null, "text": "Anyone know if this table has column X?", "thread_id": null, "when": "2025-09-21T03:10:19Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0124", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0121", "when": "2025-09-21T03:44:24Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0211", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0207", "when": "2025-09-21T03:59:07Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0025", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0020", "when": "2025-09-21T04:02:26Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0277", "labels": [], "referenced_query_id": null, "text": "Query seems slow this morning", "thread_id": null, "when": "2025-09-21T04:33:15Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0100", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0098", "when": "2025-09-21T04:47:46Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0008", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0005", "when": "2025-09-21T05:15:27Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0215", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0212", "when": "2025-09-21T05:23:31Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0167", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0166", "when": "2025-09-21T05:43:39Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0237", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0234", "when": "2025-09-21T05:52:08Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0153", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0148", "when": "2025-09-21T06:13:19Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0122", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0121", "when": "2025-09-21T06:50:32Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0271", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0265", "when": "2025-09-21T08:09:26Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0264", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0261", "when": "2025-09-21T08:09:27Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0181", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0178", "when": "2025-09-21T09:46:31Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0206", "labels": [], "referenced_query_id": "q_000593", "text": "Query seems slow this morning", "thread_id": null, "when": "2025-09-21T10:00:49Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0101", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0098", "when": "2025-09-21T10:25:01Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0201", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0198", "when": "2025-09-21T11:56:05Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0225", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0222", "when": "2025-09-21T12:03:39Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0146", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0143", "when": "2025-09-21T13:00:10Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0096", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0095", "when": "2025-09-21T13:28:02Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0210", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0207", "when": "2025-09-21T16:27:30Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0098", "labels": [], "referenced_query_id": null, "text": "Anyone know if this table has column X?", "thread_id": null, "when": "2025-09-21T16:35:30Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0080", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0078", "when": "2025-09-21T16:47:50Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0072", "labels": [], "referenced_query_id": null, "text": "Anyone know if this table has column X?", "thread_id": null, "when": "2025-09-21T17:20:39Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0268", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0265", "when": "2025-09-21T18:13:11Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0166", "labels": [], "referenced_query_id": "q_000615", "text": "Anyone know if this table has column X?", "thread_id": null, "when": "2025-09-21T18:14:44Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0034", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0032", "when": "2025-09-21T19:36:32Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0266", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0265", "when": "2025-09-21T19:42:53Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0135", "labels": [], "referenced_query_id": "q_000625", "text": "Is the revenue metric delayed today?", "thread_id": null, "when": "2025-09-21T20:33:22Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0014", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0009", "when": "2025-09-21T20:47:20Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0058", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0054", "when": "2025-09-21T21:30:35Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0170", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0166", "when": "2025-09-21T22:00:07Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0005", "labels": [], "referenced_query_id": null, "text": "Docs missing on customers table", "thread_id": null, "when": "2025-09-21T22:01:09Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0011", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0009", "when": "2025-09-21T22:49:35Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0049", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0047", "when": "2025-09-21T23:03:47Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0180", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0178", "when": "2025-09-21T23:32:46Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0075", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0072", "when": "2025-09-22T00:04:11Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0186", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0183", "when": "2025-09-22T00:10:08Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0148", "labels": [], "referenced_query_id": null, "text": "Is the revenue metric delayed today?", "thread_id": null, "when": "2025-09-22T01:26:22Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0120", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0115", "when": "2025-09-22T01:52:48Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0054", "labels": [], "referenced_query_id": "q_000526", "text": "Query seems slow this morning", "thread_id": null, "when": "2025-09-22T02:04:54Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0007", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0005", "when": "2025-09-22T02:19:19Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0177", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0172", "when": "2025-09-22T03:53:04Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0275", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0274", "when": "2025-09-22T04:06:00Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0133", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0128", "when": "2025-09-22T04:21:55Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0103", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0098", "when": "2025-09-22T05:55:11Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0026", "labels": [], "referenced_query_id": "q_000166", "text": "Access denied on dataset, who can help?", "thread_id": null, "when": "2025-09-22T06:26:47Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0185", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0183", "when": "2025-09-22T08:30:49Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0160", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0155", "when": "2025-09-22T08:33:23Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0232", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0228", "when": "2025-09-22T08:35:04Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0087", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0085", "when": "2025-09-22T10:01:27Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0129", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0128", "when": "2025-09-22T10:06:32Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0070", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0065", "when": "2025-09-22T10:28:37Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0010", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0009", "when": "2025-09-22T10:53:34Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0255", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0253", "when": "2025-09-22T11:02:55Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0230", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0228", "when": "2025-09-22T13:51:14Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0039", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0032", "when": "2025-09-22T14:42:53Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0155", "labels": [], "referenced_query_id": "q_000530", "text": "Is the revenue metric delayed today?", "thread_id": null, "when": "2025-09-22T14:50:36Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0030", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0026", "when": "2025-09-22T15:11:49Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0193", "labels": [], "referenced_query_id": null, "text": "Anyone know if this table has column X?", "thread_id": null, "when": "2025-09-22T15:20:40Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0165", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0163", "when": "2025-09-22T16:00:19Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0013", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0009", "when": "2025-09-22T16:50:32Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0001", "labels": [], "referenced_query_id": null, "text": "Docs missing on customers table", "thread_id": null, "when": "2025-09-22T16:58:53Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0203", "labels": [], "referenced_query_id": null, "text": "Anyone know if this table has column X?", "thread_id": null, "when": "2025-09-22T17:06:56Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0041", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0040", "when": "2025-09-22T17:30:47Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0147", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0143", "when": "2025-09-22T17:43:40Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0073", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0072", "when": "2025-09-22T17:46:08Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0164", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0163", "when": "2025-09-22T19:30:38Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0274", "labels": [], "referenced_query_id": null, "text": "Is the revenue metric delayed today?", "thread_id": null, "when": "2025-09-22T19:32:05Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0236", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0234", "when": "2025-09-22T20:54:39Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0234", "labels": [], "referenced_query_id": null, "text": "Access denied on dataset, who can help?", "thread_id": null, "when": "2025-09-22T21:21:10Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0136", "labels": [], "referenced_query_id": null, "text": "Is the revenue metric delayed today?", "thread_id": null, "when": "2025-09-22T21:24:26Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0009", "labels": [], "referenced_query_id": null, "text": "Query seems slow this morning", "thread_id": null, "when": "2025-09-22T22:10:12Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0281", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0277", "when": "2025-09-22T23:09:56Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0017", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0016", "when": "2025-09-22T23:36:00Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0221", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0217", "when": "2025-09-22T23:40:48Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0004", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0001", "when": "2025-09-23T00:13:29Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0132", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0128", "when": "2025-09-23T00:15:12Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0269", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0265", "when": "2025-09-23T00:17:22Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0175", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0172", "when": "2025-09-23T00:34:06Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0066", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0065", "when": "2025-09-23T01:37:32Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0257", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0253", "when": "2025-09-23T01:41:49Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0233", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0228", "when": "2025-09-23T02:03:03Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0219", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0217", "when": "2025-09-23T03:37:04Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0092", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0091", "when": "2025-09-23T04:59:43Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0118", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0115", "when": "2025-09-23T05:32:08Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0258", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0253", "when": "2025-09-23T06:02:58Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0121", "labels": [], "referenced_query_id": "q_000320", "text": "Access denied on dataset, who can help?", "thread_id": null, "when": "2025-09-23T07:12:11Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0228", "labels": [], "referenced_query_id": null, "text": "Query seems slow this morning", "thread_id": null, "when": "2025-09-23T07:28:30Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0189", "labels": [], "referenced_query_id": null, "text": "Anyone know if this table has column X?", "thread_id": null, "when": "2025-09-23T07:35:27Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0064", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0060", "when": "2025-09-23T08:23:37Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0095", "labels": [], "referenced_query_id": null, "text": "Anyone know if this table has column X?", "thread_id": null, "when": "2025-09-23T08:29:44Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0202", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0198", "when": "2025-09-23T09:03:25Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0173", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0172", "when": "2025-09-23T09:21:56Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0243", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0240", "when": "2025-09-23T11:05:02Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0156", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0155", "when": "2025-09-23T11:35:22Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0037", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0032", "when": "2025-09-23T12:07:47Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0091", "labels": [], "referenced_query_id": null, "text": "Access denied on dataset, who can help?", "thread_id": null, "when": "2025-09-23T12:17:57Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0076", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0072", "when": "2025-09-23T14:40:55Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0117", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0115", "when": "2025-09-23T14:43:37Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0171", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0166", "when": "2025-09-23T15:35:29Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0145", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0143", "when": "2025-09-23T15:36:18Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0069", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0065", "when": "2025-09-23T15:55:57Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0006", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0005", "when": "2025-09-23T17:17:18Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0200", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0198", "when": "2025-09-23T19:28:43Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0288", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0287", "when": "2025-09-23T19:30:01Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0046", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0044", "when": "2025-09-23T19:49:06Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0226", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0222", "when": "2025-09-23T20:26:34Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0282", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0277", "when": "2025-09-23T20:34:15Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0272", "labels": [], "referenced_query_id": null, "text": "Docs missing on customers table", "thread_id": null, "when": "2025-09-23T20:45:45Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0031", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0026", "when": "2025-09-23T21:09:54Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0261", "labels": [], "referenced_query_id": null, "text": "Is the revenue metric delayed today?", "thread_id": null, "when": "2025-09-23T21:33:20Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0104", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0098", "when": "2025-09-23T22:10:48Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0094", "labels": [], "referenced_query_id": null, "text": "Query seems slow this morning", "thread_id": null, "when": "2025-09-23T22:20:55Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0071", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0065", "when": "2025-09-23T22:30:42Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0187", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0183", "when": "2025-09-23T22:43:46Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0198", "labels": [], "referenced_query_id": null, "text": "Query seems slow this morning", "thread_id": null, "when": "2025-09-23T23:10:18Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0217", "labels": [], "referenced_query_id": null, "text": "Query seems slow this morning", "thread_id": null, "when": "2025-09-23T23:27:12Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0149", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0148", "when": "2025-09-24T00:02:31Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0212", "labels": [], "referenced_query_id": null, "text": "Is the revenue metric delayed today?", "thread_id": null, "when": "2025-09-24T01:49:22Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0093", "labels": [], "referenced_query_id": null, "text": "Docs missing on customers table", "thread_id": null, "when": "2025-09-24T02:26:54Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0285", "labels": [], "referenced_query_id": null, "text": "Is the revenue metric delayed today?", "thread_id": null, "when": "2025-09-24T02:43:33Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0119", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0115", "when": "2025-09-24T03:54:47Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0174", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0172", "when": "2025-09-24T04:48:58Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0182", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0178", "when": "2025-09-24T06:07:22Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0287", "labels": [], "referenced_query_id": null, "text": "Is the revenue metric delayed today?", "thread_id": null, "when": "2025-09-24T06:08:53Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0250", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0249", "when": "2025-09-24T07:53:04Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0161", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0155", "when": "2025-09-24T10:19:10Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0235", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0234", "when": "2025-09-24T10:21:13Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0163", "labels": [], "referenced_query_id": null, "text": "Docs missing on customers table", "thread_id": null, "when": "2025-09-24T11:07:59Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0079", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0078", "when": "2025-09-24T11:35:33Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0137", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0136", "when": "2025-09-24T11:50:41Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0111", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0107", "when": "2025-09-24T13:52:40Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0032", "labels": [], "referenced_query_id": null, "text": "Query seems slow this morning", "thread_id": null, "when": "2025-09-24T14:09:23Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0105", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0098", "when": "2025-09-24T14:23:55Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0223", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0222", "when": "2025-09-24T14:36:10Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0247", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0244", "when": "2025-09-24T14:39:17Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0068", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0065", "when": "2025-09-24T14:46:23Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0256", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0253", "when": "2025-09-24T15:51:37Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0176", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0172", "when": "2025-09-24T16:41:53Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0057", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0054", "when": "2025-09-24T18:25:44Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0188", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0183", "when": "2025-09-24T18:45:39Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0038", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0032", "when": "2025-09-24T19:17:56Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0246", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0244", "when": "2025-09-24T21:03:10Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0036", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0032", "when": "2025-09-24T21:19:49Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0023", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0020", "when": "2025-09-24T21:22:56Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0157", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0155", "when": "2025-09-24T22:56:49Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0131", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0128", "when": "2025-09-24T23:11:58Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0012", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0009", "when": "2025-09-24T23:42:30Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0192", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0189", "when": "2025-09-25T00:18:43Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0270", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0265", "when": "2025-09-25T00:40:18Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0089", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0085", "when": "2025-09-25T02:04:11Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0213", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0212", "when": "2025-09-25T02:57:28Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0279", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0277", "when": "2025-09-25T04:13:10Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0251", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0249", "when": "2025-09-25T04:13:20Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0196", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0193", "when": "2025-09-25T04:14:07Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0138", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0136", "when": "2025-09-25T04:35:35Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0082", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0078", "when": "2025-09-25T05:13:10Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0190", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0189", "when": "2025-09-25T05:32:02Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0052", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0047", "when": "2025-09-25T05:44:29Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0114", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0107", "when": "2025-09-25T06:36:11Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0229", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0228", "when": "2025-09-25T07:14:16Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0265", "labels": [], "referenced_query_id": null, "text": "Is the revenue metric delayed today?", "thread_id": null, "when": "2025-09-25T08:07:57Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0084", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0078", "when": "2025-09-25T08:21:49Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0061", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0060", "when": "2025-09-25T08:43:36Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0003", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0001", "when": "2025-09-25T08:55:36Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0144", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0143", "when": "2025-09-25T09:02:08Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0204", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0203", "when": "2025-09-25T09:05:08Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0220", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0217", "when": "2025-09-25T09:07:22Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0248", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0244", "when": "2025-09-25T09:51:14Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0159", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0155", "when": "2025-09-25T10:06:00Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0240", "labels": [], "referenced_query_id": "q_000792", "text": "Access denied on dataset, who can help?", "thread_id": null, "when": "2025-09-25T13:55:12Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0107", "labels": [], "referenced_query_id": null, "text": "Anyone know if this table has column X?", "thread_id": null, "when": "2025-09-25T14:10:26Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0047", "labels": [], "referenced_query_id": null, "text": "Anyone know if this table has column X?", "thread_id": null, "when": "2025-09-25T14:59:45Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0278", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0277", "when": "2025-09-25T15:08:42Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0065", "labels": [], "referenced_query_id": null, "text": "Is the revenue metric delayed today?", "thread_id": null, "when": "2025-09-25T15:13:06Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0130", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0128", "when": "2025-09-25T15:38:39Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0134", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0128", "when": "2025-09-25T15:45:59Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0168", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0166", "when": "2025-09-25T16:04:00Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0254", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0253", "when": "2025-09-25T16:10:23Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0262", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0261", "when": "2025-09-25T16:11:01Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0051", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0047", "when": "2025-09-25T16:27:33Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0127", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0121", "when": "2025-09-25T17:02:11Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0108", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0107", "when": "2025-09-25T19:25:40Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0209", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0207", "when": "2025-09-25T19:58:04Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0141", "labels": [], "referenced_query_id": null, "text": "Anyone know if this table has column X?", "thread_id": null, "when": "2025-09-25T21:13:32Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0086", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0085", "when": "2025-09-25T21:15:21Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0222", "labels": [], "referenced_query_id": "q_000799", "text": "Query seems slow this morning", "thread_id": null, "when": "2025-09-25T21:17:33Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0044", "labels": [], "referenced_query_id": null, "text": "Is the revenue metric delayed today?", "thread_id": null, "when": "2025-09-25T22:01:05Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0113", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0107", "when": "2025-09-25T23:01:50Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0284", "labels": [], "referenced_query_id": null, "text": "Query seems slow this morning", "thread_id": null, "when": "2025-09-25T23:15:23Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0224", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0222", "when": "2025-09-25T23:31:08Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0106", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0098", "when": "2025-09-26T00:15:32Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0050", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0047", "when": "2025-09-26T00:29:02Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0088", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0085", "when": "2025-09-26T00:46:43Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0078", "labels": [], "referenced_query_id": null, "text": "Access denied on dataset, who can help?", "thread_id": null, "when": "2025-09-26T00:46:57Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0172", "labels": [], "referenced_query_id": null, "text": "Is the revenue metric delayed today?", "thread_id": null, "when": "2025-09-26T01:23:20Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0195", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0193", "when": "2025-09-26T01:51:58Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0143", "labels": [], "referenced_query_id": null, "text": "Query seems slow this morning", "thread_id": null, "when": "2025-09-26T03:15:51Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0152", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0148", "when": "2025-09-26T03:42:20Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0074", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0072", "when": "2025-09-26T05:02:14Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0019", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0016", "when": "2025-09-26T05:26:01Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0115", "labels": [], "referenced_query_id": "q_000740", "text": "Docs missing on customers table", "thread_id": null, "when": "2025-09-26T05:32:11Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0199", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0198", "when": "2025-09-26T06:09:16Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0162", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0155", "when": "2025-09-26T06:58:50Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0053", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0047", "when": "2025-09-26T07:17:41Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0090", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0085", "when": "2025-09-26T07:23:30Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0128", "labels": [], "referenced_query_id": null, "text": "Access denied on dataset, who can help?", "thread_id": null, "when": "2025-09-26T08:00:17Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0056", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0054", "when": "2025-09-26T08:10:39Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0062", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0060", "when": "2025-09-26T11:36:19Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0042", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0040", "when": "2025-09-26T12:10:45Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0151", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0148", "when": "2025-09-26T12:20:08Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0194", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0193", "when": "2025-09-26T12:52:55Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0241", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0240", "when": "2025-09-26T13:38:48Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0067", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0065", "when": "2025-09-26T14:53:28Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0158", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0155", "when": "2025-09-26T15:41:30Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0218", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0217", "when": "2025-09-26T15:48:43Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0112", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0107", "when": "2025-09-26T16:31:13Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0139", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0136", "when": "2025-09-26T16:47:58Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0207", "labels": [], "referenced_query_id": "q_000414", "text": "Docs missing on customers table", "thread_id": null, "when": "2025-09-26T17:30:57Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0169", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0166", "when": "2025-09-26T20:24:54Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0002", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0001", "when": "2025-09-26T20:33:40Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0273", "labels": [], "referenced_query_id": null, "text": "Grant added. Please retry", "thread_id": "s_0272", "when": "2025-09-26T21:02:56Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0280", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0277", "when": "2025-09-26T21:10:48Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0238", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0234", "when": "2025-09-26T21:11:49Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0216", "labels": [], "referenced_query_id": null, "text": "We need a mart table for this", "thread_id": "s_0212", "when": "2025-09-26T21:13:57Z"}
+{"actor": "u_riley", "channel": "slack", "id": "s_0178", "labels": [], "referenced_query_id": "q_000300", "text": "Is the revenue metric delayed today?", "thread_id": null, "when": "2025-09-26T21:17:39Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0142", "labels": [], "referenced_query_id": null, "text": "Looks like a freshness breach", "thread_id": "s_0141", "when": "2025-09-26T21:22:12Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0150", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0148", "when": "2025-09-26T22:00:06Z"}
+{"actor": "u_alex", "channel": "slack", "id": "s_0018", "labels": [], "referenced_query_id": null, "text": "I'll check the docs", "thread_id": "s_0016", "when": "2025-09-26T22:24:24Z"}
+{"actor": "u_jamie", "channel": "slack", "id": "s_0029", "labels": [], "referenced_query_id": null, "text": "Try joining on customer_id", "thread_id": "s_0026", "when": "2025-09-26T22:28:11Z"}

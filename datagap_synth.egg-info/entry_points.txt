@@ -1,0 +1,3 @@
+[console_scripts]
+datagap-report = datagap_report.cli:main
+datagap-synth = datagap_synth.cli:main

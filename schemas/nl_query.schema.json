@@ -1,0 +1,21 @@
+{
+  "$id": "nl_query.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["id", "when", "actor", "channel", "nl_text", "outcome"],
+  "properties": {
+    "id": {"type": "string"},
+    "when": {"type": "string", "format": "date-time"},
+    "actor": {"type": "string"},
+    "channel": {"const": "nlq"},
+    "nl_text": {"type": "string"},
+    "parsed_sql": {"type": ["string", "null"]},
+    "tables": {"type": "array", "items": {"type": "string"}},
+    "dims": {"type": "array", "items": {"type": "string"}},
+    "metrics": {"type": "array", "items": {"type": "string"}},
+    "timeframe": {"type": ["string", "null"]},
+    "outcome": {"enum": ["answered", "blocked", "degraded", "slow", "uncertain"]},
+    "gap_types": {"type": "array", "items": {"type": "string"}}
+  }
+}
+

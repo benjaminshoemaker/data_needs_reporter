@@ -1,0 +1,1206 @@
+[
+  {
+    "columns": [
+      {
+        "name": "channel",
+        "type": "string"
+      },
+      {
+        "name": "sku",
+        "type": "string"
+      },
+      {
+        "name": "segment",
+        "type": "string"
+      },
+      {
+        "name": "customers",
+        "type": "integer"
+      },
+      {
+        "name": "customers",
+        "type": "number"
+      },
+      {
+        "name": "revenue",
+        "type": "integer"
+      },
+      {
+        "name": "units",
+        "type": "integer"
+      },
+      {
+        "name": "revenue",
+        "type": "integer"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "orders",
+    "layer": "staging",
+    "name": "stg_orders_000",
+    "owner": "u_alex"
+  },
+  {
+    "columns": [
+      {
+        "name": "sku",
+        "type": "string"
+      },
+      {
+        "name": "device",
+        "type": "string"
+      },
+      {
+        "name": "channel",
+        "type": "string"
+      },
+      {
+        "name": "revenue",
+        "type": "number"
+      },
+      {
+        "name": "visits",
+        "type": "integer"
+      },
+      {
+        "name": "orders",
+        "type": "number"
+      },
+      {
+        "name": "visits",
+        "type": "number"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "customers",
+    "layer": "staging",
+    "name": "stg_customers_001",
+    "owner": "u_alex"
+  },
+  {
+    "columns": [
+      {
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "name": "sku",
+        "type": "string"
+      },
+      {
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "name": "units",
+        "type": "integer"
+      },
+      {
+        "name": "visits",
+        "type": "number"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "orders",
+    "layer": "staging",
+    "name": "stg_orders_002",
+    "owner": "u_jamie"
+  },
+  {
+    "columns": [
+      {
+        "name": "channel",
+        "type": "string"
+      },
+      {
+        "name": "sku",
+        "type": "string"
+      },
+      {
+        "name": "device",
+        "type": "string"
+      },
+      {
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "name": "revenue",
+        "type": "integer"
+      },
+      {
+        "name": "units",
+        "type": "number"
+      },
+      {
+        "name": "orders",
+        "type": "integer"
+      },
+      {
+        "name": "revenue",
+        "type": "integer"
+      },
+      {
+        "name": "units",
+        "type": "number"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "products",
+    "layer": "staging",
+    "name": "stg_products_003",
+    "owner": "u_riley"
+  },
+  {
+    "columns": [
+      {
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "name": "customers",
+        "type": "integer"
+      },
+      {
+        "name": "units",
+        "type": "integer"
+      },
+      {
+        "name": "customers",
+        "type": "integer"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "orders",
+    "layer": "staging",
+    "name": "stg_orders_004",
+    "owner": "u_alex"
+  },
+  {
+    "columns": [
+      {
+        "name": "device",
+        "type": "string"
+      },
+      {
+        "name": "segment",
+        "type": "string"
+      },
+      {
+        "name": "customers",
+        "type": "integer"
+      },
+      {
+        "name": "units",
+        "type": "number"
+      },
+      {
+        "name": "visits",
+        "type": "number"
+      },
+      {
+        "name": "revenue",
+        "type": "number"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "orders",
+    "layer": "staging",
+    "name": "stg_orders_005",
+    "owner": "u_jamie"
+  },
+  {
+    "columns": [
+      {
+        "name": "channel",
+        "type": "string"
+      },
+      {
+        "name": "sku",
+        "type": "string"
+      },
+      {
+        "name": "orders",
+        "type": "number"
+      },
+      {
+        "name": "orders",
+        "type": "number"
+      },
+      {
+        "name": "orders",
+        "type": "integer"
+      },
+      {
+        "name": "visits",
+        "type": "number"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "customers",
+    "layer": "staging",
+    "name": "stg_customers_006",
+    "owner": "u_riley"
+  },
+  {
+    "columns": [
+      {
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "name": "units",
+        "type": "number"
+      },
+      {
+        "name": "visits",
+        "type": "number"
+      },
+      {
+        "name": "units",
+        "type": "integer"
+      },
+      {
+        "name": "units",
+        "type": "number"
+      },
+      {
+        "name": "visits",
+        "type": "number"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "products",
+    "layer": "staging",
+    "name": "stg_products_007",
+    "owner": "u_alex"
+  },
+  {
+    "columns": [
+      {
+        "name": "channel",
+        "type": "string"
+      },
+      {
+        "name": "segment",
+        "type": "string"
+      },
+      {
+        "name": "orders",
+        "type": "integer"
+      },
+      {
+        "name": "revenue",
+        "type": "integer"
+      },
+      {
+        "name": "visits",
+        "type": "integer"
+      },
+      {
+        "name": "customers",
+        "type": "number"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "orders",
+    "layer": "staging",
+    "name": "stg_orders_008",
+    "owner": "u_jamie"
+  },
+  {
+    "columns": [
+      {
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "name": "orders",
+        "type": "number"
+      },
+      {
+        "name": "orders",
+        "type": "number"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "orders",
+    "layer": "staging",
+    "name": "stg_orders_009",
+    "owner": "u_jamie"
+  },
+  {
+    "columns": [
+      {
+        "name": "device",
+        "type": "string"
+      },
+      {
+        "name": "segment",
+        "type": "string"
+      },
+      {
+        "name": "units",
+        "type": "integer"
+      },
+      {
+        "name": "units",
+        "type": "integer"
+      },
+      {
+        "name": "revenue",
+        "type": "number"
+      },
+      {
+        "name": "visits",
+        "type": "number"
+      },
+      {
+        "name": "units",
+        "type": "number"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "customers",
+    "layer": "staging",
+    "name": "stg_customers_010",
+    "owner": "u_jamie"
+  },
+  {
+    "columns": [
+      {
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "name": "orders",
+        "type": "integer"
+      },
+      {
+        "name": "customers",
+        "type": "integer"
+      },
+      {
+        "name": "customers",
+        "type": "number"
+      },
+      {
+        "name": "units",
+        "type": "integer"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "customers",
+    "layer": "staging",
+    "name": "stg_customers_011",
+    "owner": "u_jamie"
+  },
+  {
+    "columns": [
+      {
+        "name": "channel",
+        "type": "string"
+      },
+      {
+        "name": "device",
+        "type": "string"
+      },
+      {
+        "name": "channel",
+        "type": "string"
+      },
+      {
+        "name": "revenue",
+        "type": "integer"
+      },
+      {
+        "name": "revenue",
+        "type": "number"
+      },
+      {
+        "name": "customers",
+        "type": "number"
+      },
+      {
+        "name": "units",
+        "type": "integer"
+      },
+      {
+        "name": "customers",
+        "type": "integer"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "orders",
+    "layer": "staging",
+    "name": "stg_orders_012",
+    "owner": "u_riley"
+  },
+  {
+    "columns": [
+      {
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "name": "sku",
+        "type": "string"
+      },
+      {
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "name": "revenue",
+        "type": "number"
+      },
+      {
+        "name": "revenue",
+        "type": "integer"
+      },
+      {
+        "name": "customers",
+        "type": "number"
+      },
+      {
+        "name": "customers",
+        "type": "integer"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "products",
+    "layer": "staging",
+    "name": "stg_products_013",
+    "owner": "u_jamie"
+  },
+  {
+    "columns": [
+      {
+        "name": "segment",
+        "type": "string"
+      },
+      {
+        "name": "segment",
+        "type": "string"
+      },
+      {
+        "name": "sku",
+        "type": "string"
+      },
+      {
+        "name": "visits",
+        "type": "number"
+      },
+      {
+        "name": "orders",
+        "type": "integer"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "marketing",
+    "layer": "staging",
+    "name": "stg_marketing_014",
+    "owner": "u_alex"
+  },
+  {
+    "columns": [
+      {
+        "name": "device",
+        "type": "string"
+      },
+      {
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "name": "sku",
+        "type": "string"
+      },
+      {
+        "name": "orders",
+        "type": "integer"
+      },
+      {
+        "name": "revenue",
+        "type": "integer"
+      },
+      {
+        "name": "revenue",
+        "type": "number"
+      },
+      {
+        "name": "customers",
+        "type": "number"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "customers",
+    "layer": "staging",
+    "name": "stg_customers_015",
+    "owner": "u_jamie"
+  },
+  {
+    "columns": [
+      {
+        "name": "segment",
+        "type": "string"
+      },
+      {
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "name": "channel",
+        "type": "string"
+      },
+      {
+        "name": "segment",
+        "type": "string"
+      },
+      {
+        "name": "customers",
+        "type": "number"
+      },
+      {
+        "name": "revenue",
+        "type": "integer"
+      },
+      {
+        "name": "visits",
+        "type": "integer"
+      },
+      {
+        "name": "units",
+        "type": "integer"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "products",
+    "layer": "staging",
+    "name": "stg_products_016",
+    "owner": "u_riley"
+  },
+  {
+    "columns": [
+      {
+        "name": "segment",
+        "type": "string"
+      },
+      {
+        "name": "segment",
+        "type": "string"
+      },
+      {
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "name": "visits",
+        "type": "number"
+      },
+      {
+        "name": "customers",
+        "type": "integer"
+      },
+      {
+        "name": "customers",
+        "type": "integer"
+      },
+      {
+        "name": "revenue",
+        "type": "integer"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "customers",
+    "layer": "staging",
+    "name": "stg_customers_017",
+    "owner": "u_jamie"
+  },
+  {
+    "columns": [
+      {
+        "name": "segment",
+        "type": "string"
+      },
+      {
+        "name": "channel",
+        "type": "string"
+      },
+      {
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "name": "sku",
+        "type": "string"
+      },
+      {
+        "name": "orders",
+        "type": "integer"
+      },
+      {
+        "name": "revenue",
+        "type": "number"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "orders",
+    "layer": "staging",
+    "name": "stg_orders_018",
+    "owner": "u_alex"
+  },
+  {
+    "columns": [
+      {
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "name": "device",
+        "type": "string"
+      },
+      {
+        "name": "sku",
+        "type": "string"
+      },
+      {
+        "name": "sku",
+        "type": "string"
+      },
+      {
+        "name": "sku",
+        "type": "string"
+      },
+      {
+        "name": "customers",
+        "type": "number"
+      },
+      {
+        "name": "visits",
+        "type": "number"
+      },
+      {
+        "name": "visits",
+        "type": "integer"
+      },
+      {
+        "name": "customers",
+        "type": "number"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "products",
+    "layer": "staging",
+    "name": "stg_products_019",
+    "owner": "u_jamie"
+  },
+  {
+    "columns": [
+      {
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "name": "sku",
+        "type": "string"
+      },
+      {
+        "name": "channel",
+        "type": "string"
+      },
+      {
+        "name": "channel",
+        "type": "string"
+      },
+      {
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "name": "visits",
+        "type": "integer"
+      },
+      {
+        "name": "units",
+        "type": "number"
+      },
+      {
+        "name": "orders",
+        "type": "number"
+      },
+      {
+        "name": "units",
+        "type": "number"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "products",
+    "layer": "mart",
+    "name": "mart_products_000",
+    "owner": "u_riley"
+  },
+  {
+    "columns": [
+      {
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "name": "device",
+        "type": "string"
+      },
+      {
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "name": "customers",
+        "type": "integer"
+      },
+      {
+        "name": "orders",
+        "type": "number"
+      },
+      {
+        "name": "visits",
+        "type": "integer"
+      },
+      {
+        "name": "orders",
+        "type": "integer"
+      },
+      {
+        "name": "orders",
+        "type": "integer"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "customers",
+    "layer": "mart",
+    "name": "mart_customers_001",
+    "owner": "u_riley"
+  },
+  {
+    "columns": [
+      {
+        "name": "channel",
+        "type": "string"
+      },
+      {
+        "name": "channel",
+        "type": "string"
+      },
+      {
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "name": "revenue",
+        "type": "integer"
+      },
+      {
+        "name": "customers",
+        "type": "number"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "orders",
+    "layer": "mart",
+    "name": "mart_orders_002",
+    "owner": "u_alex"
+  },
+  {
+    "columns": [
+      {
+        "name": "segment",
+        "type": "string"
+      },
+      {
+        "name": "segment",
+        "type": "string"
+      },
+      {
+        "name": "device",
+        "type": "string"
+      },
+      {
+        "name": "visits",
+        "type": "integer"
+      },
+      {
+        "name": "orders",
+        "type": "integer"
+      },
+      {
+        "name": "orders",
+        "type": "number"
+      },
+      {
+        "name": "units",
+        "type": "number"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "marketing",
+    "layer": "mart",
+    "name": "mart_marketing_003",
+    "owner": "u_jamie"
+  },
+  {
+    "columns": [
+      {
+        "name": "channel",
+        "type": "string"
+      },
+      {
+        "name": "channel",
+        "type": "string"
+      },
+      {
+        "name": "segment",
+        "type": "string"
+      },
+      {
+        "name": "visits",
+        "type": "number"
+      },
+      {
+        "name": "units",
+        "type": "integer"
+      },
+      {
+        "name": "units",
+        "type": "number"
+      },
+      {
+        "name": "visits",
+        "type": "number"
+      },
+      {
+        "name": "customers",
+        "type": "integer"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "orders",
+    "layer": "mart",
+    "name": "mart_orders_004",
+    "owner": "u_alex"
+  },
+  {
+    "columns": [
+      {
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "name": "device",
+        "type": "string"
+      },
+      {
+        "name": "units",
+        "type": "number"
+      },
+      {
+        "name": "revenue",
+        "type": "integer"
+      },
+      {
+        "name": "visits",
+        "type": "integer"
+      },
+      {
+        "name": "units",
+        "type": "integer"
+      },
+      {
+        "name": "customers",
+        "type": "number"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "orders",
+    "layer": "mart",
+    "name": "mart_orders_005",
+    "owner": "u_alex"
+  },
+  {
+    "columns": [
+      {
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "name": "segment",
+        "type": "string"
+      },
+      {
+        "name": "units",
+        "type": "number"
+      },
+      {
+        "name": "revenue",
+        "type": "number"
+      },
+      {
+        "name": "visits",
+        "type": "number"
+      },
+      {
+        "name": "visits",
+        "type": "integer"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "orders",
+    "layer": "mart",
+    "name": "mart_orders_006",
+    "owner": "u_jamie"
+  },
+  {
+    "columns": [
+      {
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "name": "sku",
+        "type": "string"
+      },
+      {
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "name": "revenue",
+        "type": "integer"
+      },
+      {
+        "name": "orders",
+        "type": "number"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "marketing",
+    "layer": "mart",
+    "name": "mart_marketing_007",
+    "owner": "u_riley"
+  },
+  {
+    "columns": [
+      {
+        "name": "device",
+        "type": "string"
+      },
+      {
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "name": "device",
+        "type": "string"
+      },
+      {
+        "name": "sku",
+        "type": "string"
+      },
+      {
+        "name": "device",
+        "type": "string"
+      },
+      {
+        "name": "revenue",
+        "type": "number"
+      },
+      {
+        "name": "customers",
+        "type": "number"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "marketing",
+    "layer": "mart",
+    "name": "mart_marketing_008",
+    "owner": "u_riley"
+  },
+  {
+    "columns": [
+      {
+        "name": "channel",
+        "type": "string"
+      },
+      {
+        "name": "sku",
+        "type": "string"
+      },
+      {
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "name": "segment",
+        "type": "string"
+      },
+      {
+        "name": "orders",
+        "type": "number"
+      },
+      {
+        "name": "customers",
+        "type": "number"
+      },
+      {
+        "name": "dt",
+        "type": "date"
+      }
+    ],
+    "domain": "customers",
+    "layer": "mart",
+    "name": "mart_customers_009",
+    "owner": "u_jamie"
+  }
+]

@@ -1,0 +1,70 @@
+{
+  "config_echo": {
+    "actors": [
+      "u_alex",
+      "u_riley",
+      "u_jamie"
+    ],
+    "audience_weights": {
+      "Eng": 1,
+      "Exec": 3,
+      "Ops": 2
+    },
+    "catalog": {
+      "domains": [
+        "orders",
+        "customers",
+        "products",
+        "marketing"
+      ],
+      "freshness_sla_hours": [
+        24,
+        48,
+        72
+      ],
+      "inject_freshness_breaches": 0.15,
+      "mart_tables": 10,
+      "staging_tables": 20
+    },
+    "email": {
+      "replies_mean": 3,
+      "threads": 20
+    },
+    "nlq": {
+      "count": 800,
+      "gaps_distribution": {
+        "access_denied": 0.03,
+        "docs_missing": 0.12,
+        "freshness_breach": 0.08,
+        "grain_mismatch": 0.06,
+        "joinability_issue": 0.05,
+        "missing_asset": 0.1,
+        "missing_column": 0.12,
+        "performance_limit": 0.04,
+        "type_mismatch": 0.05
+      },
+      "slow_rate": 0.1,
+      "success_rate": 0.65,
+      "uncertain_rate": 0.05
+    },
+    "schema_version": "1.0.0",
+    "seed": null,
+    "slack": {
+      "replies_mean": 4,
+      "threads": 60
+    },
+    "time_window_days": 7
+  },
+  "counts": {
+    "catalog_datasets": 30,
+    "catalog_freshness_rows": 30,
+    "catalog_lineage_edges": 30,
+    "email": 73,
+    "nl_queries": 800,
+    "slack": 288
+  },
+  "generated_at": "2025-09-26T22:36:40Z",
+  "generator_version": "0.1.0",
+  "pack_id": "pack1",
+  "seed": null
+}

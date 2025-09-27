@@ -106,6 +106,23 @@ def validate_pack(pack_dir: Path) -> Tuple[bool, str]:
     if missing:
         errors.append(f"freshness.csv missing datasets: {sorted(missing)[:5]}{'...' if len(missing)>5 else ''}")
 
+    # Additional checks: language distribution and gap triggers
+    # language coverage
+    langs = [r.get("lang", "en") for r in nlq]
+    non_en = sum(1 for x in langs if x != "en")
+    if nlq:
+        pct_non_en = 100.0 * non_en / len(nlq)
+        if pct_non_en < 5.0:  # expect small multilingual presence
+            errors.append(f"multilingual coverage low: {pct_non_en:.1f}% < 5%")
+    # gap triggers presence (ensure missing asset/column present somewhere)
+    gap_counts: Dict[str, int] = {}
+    for r in nlq:
+        for g in r.get("gap_types", []) or []:
+            gap_counts[g] = gap_counts.get(g, 0) + 1
+    missing_ref = gap_counts.get("missing_column", 0) + gap_counts.get("missing_asset", 0)
+    if nlq and missing_ref < max(1, int(0.1 * len(nlq))):
+        errors.append("insufficient missing_column/missing_asset coverage (<10%)")
+
     ok = not errors
     summary = (
         f"OK: {len(nlq)} nlq, {len(slack)} slack, {len(email)} email, {len(datasets)} datasets"
@@ -113,4 +130,3 @@ def validate_pack(pack_dir: Path) -> Tuple[bool, str]:
         else "Validation failed:\n- " + "\n- ".join(errors)
     )
     return ok, summary
-

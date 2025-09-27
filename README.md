@@ -33,13 +33,15 @@ Quickstart
 
 Data Gaps Report (LLM-assisted)
 - CLI: `datagap-report`
+- Defaults optimized for cost: LLM `gpt-4o-mini`, embeddings `text-embedding-3-small`.
+- Override with `--model gpt-5` or `--embed text-embedding-3-large` as needed.
 - Uses OpenAI Responses API with Structured Outputs (JSON Schema) and optional embeddings to improve intent extraction, gap classification, clustering, and summaries. Caching keeps costs stable.
 
 Commands
 - Generate from a pack
 
-    datagap-report gen --pack packs/pack1 --out report_out \
-      --llm on --model gpt-5-mini --embed text-embedding-3-small \
+    datagap-report gen --pack packs/pack1 --out report_out \\
+      --llm on --model gpt-4o-mini --embed text-embedding-3-small \\
       --api-base https://api.openai.com
 
 - Validate outputs
@@ -55,13 +57,31 @@ Environment
 - Set `LLM_API_KEY` for API auth. Override base with `--api-base`.
 
 Models
-- Default LLM: `gpt-5-mini` (override with `--model gpt-5`).
+- Default LLM: `gpt-4o-mini` (cheaper; override with `--model gpt-5`).
 - Embeddings: `text-embedding-3-small` (override with `--embed text-embedding-3-large`).
 - Structured Outputs: enforced via JSON Schema with `strict: true` using the Responses API.
+  Cost summary written to `report_out/artifacts/cost.json` with token estimates and cache hits.
 
 Docs
 - OpenAI Models: https://platform.openai.com/docs/models
 - Structured Outputs (Responses API): https://platform.openai.com/docs/guides/structured-outputs
+
+Generated Data Policy
+- Committed:
+  - Code, configs, and small fixtures under `fixtures/`
+  - One example report under `docs/examples/`
+- Not committed:
+  - Bulk generated data under `packs/`, `out/`, and `artifacts/`
+  - Per-run `report*.md` and `report*.html`, and PDF exports
+- How to regenerate:
+  - `make fixtures` generates a golden pack (`fixtures/packs/golden`) and a non-LLM example report (`docs/examples/golden`).
+  - CI also builds a pack and report on every push and uploads `out/ci` as an artifact.
+
+Pre-commit
+- Install pre-commit once: `pip install pre-commit && pre-commit install`
+- Hooks enforce:
+  - No files >10MB added
+  - No commits of generated dirs (`packs/`, `out/`, `artifacts/`)
 
 Determinism and Seeds
 - By default generation is non-deterministic.

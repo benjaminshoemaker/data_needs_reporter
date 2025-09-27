@@ -1,0 +1,16 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-added-large-files
+        args: ["--maxkb=10240"]
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+
+  - repo: local
+    hooks:
+      - id: forbid-generated-dirs
+        name: Forbid committing generated dirs (packs/, out/, artifacts/)
+        language: system
+        entry: bash -c 'echo "Do not commit generated artifacts (packs/, out/, artifacts/)" >&2; exit 1'
+        files: '^(packs/|out/|artifacts/)'

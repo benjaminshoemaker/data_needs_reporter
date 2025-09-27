@@ -16,6 +16,11 @@ from jsonschema import Draft202012Validator
 
 from .llm import LLMClient, LLMClientError
 from .schemas import INTENT_SCHEMA, GAPTYPES_SCHEMA, BACKLOG_SUMMARY_SCHEMA
+from .normalize import filter_events
+from .gap_miner import mine_missing_contexts
+from .score import score_missing_context
+from . import __version__ as REPORT_VERSION
+import subprocess
 
 
 def _read_jsonl(path: Path) -> List[Dict[str, Any]]:
@@ -56,6 +61,8 @@ def _redact(s: str) -> str:
     s = re.sub(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+", "[redacted_email]", s)
     s = re.sub(r"@([A-Za-z0-9_\-\.]+)", "@[redacted]", s)
     s = re.sub(r"\bu_[A-Za-z0-9_]+\b", "u_[redacted]", s)
+    s = re.sub(r"\b\+?\d[\d\-\s]{7,}\b", "[redacted_phone]", s)
+    s = re.sub(r"\b\d{9,}\b", "[redacted_id]", s)
     return s
 
 
@@ -70,16 +77,16 @@ def _catalog_tokens(datasets: List[Dict[str, Any]]) -> Dict[str, List[str]]:
     return {"tables": tables, "cols": cols}
 
 
-def _normalize_events(pack: Dict[str, Any], horizon_days: int = 7) -> List[Dict[str, Any]]:
+def _normalize_events_by_channel(pack: Dict[str, Any], horizon_days: int = 7) -> Dict[str, List[Dict[str, Any]]]:
     now = _utc_parse(pack["manifest"]["generated_at"]) if "generated_at" in pack["manifest"] else datetime.now(UTC)
     start = now - timedelta(days=horizon_days)
-    rows: List[Dict[str, Any]] = []
+    per: Dict[str, List[Dict[str, Any]]] = {"nlq": [], "slack": [], "email": []}
     # NLQ
     for r in pack["nlq"]:
         t = _utc_parse(r["when"]) if "when" in r else now
         if t < start or t > now:
             continue
-        rows.append(
+        per["nlq"].append(
             {
                 "id": r["id"],
                 "when": t,
@@ -97,7 +104,7 @@ def _normalize_events(pack: Dict[str, Any], horizon_days: int = 7) -> List[Dict[
         t = _utc_parse(r["when"]) if "when" in r else now
         if t < start or t > now:
             continue
-        rows.append(
+        per["slack"].append(
             {
                 "id": r["id"],
                 "when": t,
@@ -117,7 +124,7 @@ def _normalize_events(pack: Dict[str, Any], horizon_days: int = 7) -> List[Dict[
             continue
         subject = r.get("subject", "")
         body = r.get("body", "")
-        rows.append(
+        per["email"].append(
             {
                 "id": r["id"],
                 "when": t,
@@ -130,8 +137,9 @@ def _normalize_events(pack: Dict[str, Any], horizon_days: int = 7) -> List[Dict[
                 "tables": [],
             }
         )
-    rows.sort(key=lambda r: (r["when"], r["id"]))
-    return rows
+    for ch in per:
+        per[ch].sort(key=lambda r: (r["when"], r["id"]))
+    return per
 
 
 def _rule_intent(text: str, parsed_sql: Optional[str], tokens: Dict[str, List[str]]) -> Dict[str, Any]:
@@ -238,6 +246,12 @@ def generate_report(
     api_base: str,
     api_key: Optional[str],
     llm_limit: int = 0,
+    llm_budget_tokens: int = 0,
+    sample_per_channel: int = 25,
+    sample_random: bool = False,
+    source: str = "all",
+    focus_gaps: List[str] | None = None,
+    min_frequency: int = 3,
 ) -> Dict[str, Any]:
     log = logging.getLogger("datagap_report")
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -253,8 +267,30 @@ def generate_report(
         len(pack["datasets"]),
     )
     tokens = _catalog_tokens(pack["datasets"])
-    events = _normalize_events(pack)
-    log.info("Normalized events: %d (last 7 days)", len(events))
+    by_ch = _normalize_events_by_channel(pack)
+    # sampling per channel (default 25; 0 means all)
+    if sample_per_channel and sample_per_channel > 0:
+        if sample_random:
+            import random as _rnd
+            n = sample_per_channel
+            nlq_ev = _rnd.sample(by_ch["nlq"], k=min(n, len(by_ch["nlq"])) )
+            slack_ev = _rnd.sample(by_ch["slack"], k=min(n, len(by_ch["slack"])) )
+            email_ev = _rnd.sample(by_ch["email"], k=min(n, len(by_ch["email"])) )
+        else:
+            nlq_ev = by_ch["nlq"][: sample_per_channel]
+            slack_ev = by_ch["slack"][: sample_per_channel]
+            email_ev = by_ch["email"][: sample_per_channel]
+    else:
+        nlq_ev, slack_ev, email_ev = by_ch["nlq"], by_ch["slack"], by_ch["email"]
+    events_all = sorted(nlq_ev + slack_ev + email_ev, key=lambda r: (r["when"], r["id"]))
+    if source != "all" or (focus_gaps):
+        events = filter_events(events_all, source=source, focus_gaps=(focus_gaps or []))
+    else:
+        events = events_all
+    log.info(
+        "Normalized events: %d (nlq=%d slack=%d email=%d; last 7 days) filtered=%d",
+        len(events_all), len(nlq_ev), len(slack_ev), len(email_ev), len(events)
+    )
 
     owners: Dict[str, Any] = {}
     if owners_yaml and owners_yaml.exists():
@@ -280,7 +316,7 @@ def generate_report(
     llm_disabled = False
     for idx, rid in enumerate(need_ids, start=1):
         ev = next(e for e in events if e["id"] == rid)
-        if llm_on and not llm_disabled:
+        if llm_on and not llm_disabled and (llm_budget_tokens <= 0 or (client.cost_summary()["responses"]["prompt_tokens"] + client.cost_summary()["responses"]["completion_tokens"]) < llm_budget_tokens):
             system = (
                 "Extract analytics intent from short text or SQL. "
                 "Use only tokens present in the input or in the provided catalog token list. "
@@ -299,8 +335,7 @@ def generate_report(
                     system=system,
                     user=user,
                     response_format=INTENT_SCHEMA,
-                    temperature=0.0,
-                    max_output_tokens=512,
+                    max_output_tokens=256,
                 )
                 # Validate + post-filter
                 v_intent.validate(llm_out)
@@ -335,7 +370,7 @@ def generate_report(
         need_gap_ids = need_gap_ids[:llm_limit]
     for idx, rid in enumerate(need_gap_ids, start=1):
         ev = next(e for e in events if e["id"] == rid)
-        if llm_on and not llm_disabled:
+        if llm_on and not llm_disabled and (llm_budget_tokens <= 0 or (client.cost_summary()["responses"]["prompt_tokens"] + client.cost_summary()["responses"]["completion_tokens"]) < llm_budget_tokens):
             system = (
                 "Classify applicable gap types from the allowed set based only on the provided "
                 "intent, text, outcome, errors, and catalog snapshot."
@@ -355,7 +390,6 @@ def generate_report(
                     system=system,
                     user=user,
                     response_format=GAPTYPES_SCHEMA,
-                    temperature=0.0,
                     max_output_tokens=256,
                 )
                 v_gap.validate(llm_out)
@@ -440,10 +474,16 @@ def generate_report(
     # Titles/summaries via LLM
     summaries: Dict[str, Dict[str, str]] = {}
     v_summary = Draft202012Validator(BACKLOG_SUMMARY_SCHEMA["schema"])
+    # Determine top audience from config (highest weight key if present)
+    cfg = pack.get("manifest", {}).get("config_echo", {})
+    aud_weights = cfg.get("audience_weights") or {"Exec": 3, "Ops": 2, "Eng": 1}
+    audience_top = None
+    if isinstance(aud_weights, dict) and aud_weights:
+        audience_top = sorted(aud_weights.items(), key=lambda kv: -kv[1])[0][0]
     for gid, cl in clusters.items():
         title = None
         why = None
-        if llm_on:
+        if llm_on and not llm_disabled and (llm_budget_tokens <= 0 or (client.cost_summary()["responses"]["prompt_tokens"] + client.cost_summary()["responses"]["completion_tokens"]) < llm_budget_tokens):
             system = (
                 "Write a concise backlog item title and one-sentence rationale. "
                 "Use only supplied facts."
@@ -454,6 +494,7 @@ def generate_report(
                 "datasets": cl["datasets"],
                 "severity": "M",
                 "effort": "M",
+                "audience_top": audience_top,
             }
             try:
                 out = client.structured_json(
@@ -461,8 +502,7 @@ def generate_report(
                     system=system,
                     user=user,
                     response_format=BACKLOG_SUMMARY_SCHEMA,
-                    temperature=0.0,
-                    max_output_tokens=200,
+                    max_output_tokens=192,
                 )
                 v_summary.validate(out)
                 title = out["title"]
@@ -480,6 +520,34 @@ def generate_report(
     # Write outputs
     artifacts = out_dir / "artifacts"
     artifacts.mkdir(parents=True, exist_ok=True)
+    # persist run config (with version, timestamp, seed, git commit)
+    try:
+        git_sha = None
+        try:
+            git_sha = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"], text=True).strip()
+        except Exception:
+            git_sha = None
+        run_cfg = {
+            "version": REPORT_VERSION,
+            "timestamp_utc": datetime.now(UTC).replace(microsecond=0).isoformat(),
+            "seed": pack.get("manifest", {}).get("seed"),
+            "model": model if llm_on else "off",
+            "embed_model": embed_model,
+            "cli_flags": {
+                "llm_on": llm_on,
+                "limit_llm": llm_limit,
+                "llm_budget_tokens": llm_budget_tokens,
+                "sample_per_channel": sample_per_channel,
+                "sample_random": sample_random,
+                "source": source,
+                "focus_gaps": focus_gaps or [],
+                "min_frequency": min_frequency,
+            },
+            "git_commit": git_sha,
+        }
+        (artifacts / "run_config.json").write_text(json.dumps(run_cfg, indent=2, sort_keys=True))
+    except Exception as e:
+        raise RuntimeError(f"Failed to write artifacts/run_config.json: {e}")
     # intents
     with (artifacts / "intents.jsonl").open("w", encoding="utf-8") as f:
         for ev in events:
@@ -488,12 +556,16 @@ def generate_report(
     # clusters
     (artifacts / "clusters.json").write_text(json.dumps(clusters, indent=2, sort_keys=True))
 
+    # scoring and ranking (by frequency/size)
+    rank = sorted(clusters.keys(), key=lambda c: len(clusters[c]["ids"]), reverse=True)
+
     # backlog.csv
     bl_path = out_dir / "backlog.csv"
     with bl_path.open("w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["cluster_id", "title", "why", "gap_types", "datasets", "severity", "effort"])
-        for gid, cl in clusters.items():
+        for gid in rank:
+            cl = clusters[gid]
             row = [
                 gid,
                 summaries[gid]["title"],
@@ -525,43 +597,215 @@ def generate_report(
     dot.append("}")
     (out_dir / "hotspots.dot").write_text("\n".join(dot))
 
-    # report.md and report.html
+    # Optional: NLQ missing data gap mining section data
+    nlq_missing_section_md: List[str] = []
+    nlq_missing_section_html: List[str] = []
+    if source == "nlq" and (focus_gaps or []) and any(g in {"missing_column", "missing_asset"} for g in (focus_gaps or [])):
+        nlq_only = [e for e in events if e.get("channel") == "nlq"]
+        log.info("NLQ mining: nlq_total=%d (filtered)", len(nlq_only))
+        mined = mine_missing_contexts(nlq_only, intents, pack["datasets"], min_freq=min_frequency)
+        log.info("NLQ mining: contexts=%d (min_freq=%d)", len(mined), min_frequency)
+        for ctx in mined:
+            ctx["score"] = score_missing_context(ctx)
+        mined.sort(key=lambda x: x["score"], reverse=True)
+        # write CSV artifact
+        with (artifacts / "nlq_missing_summary.csv").open("w", newline="", encoding="utf-8") as fcsv:
+            w = csv.writer(fcsv)
+            w.writerow(["missing_type", "missing_target", "metrics", "dims", "timeframe", "count", "score", "datasets", "owners", "examples_json"])
+            for ctx in mined:
+                w.writerow([
+                    ctx["missing_type"],
+                    ctx["missing_target"],
+                    ";".join(ctx["metric_set"]),
+                    ";".join(ctx["dim_set"]),
+                    ctx.get("timeframe") or "",
+                    ctx["count"],
+                    ctx["score"],
+                    ";".join(ctx["datasets_ref"]),
+                    ";".join(ctx["owners"]),
+                    json.dumps(ctx["examples"], ensure_ascii=False),
+                ])
+        # Build sections (top 10)
+        if mined:
+            nlq_missing_section_md.append("## Top NLQ Missing Data Gaps")
+            nlq_missing_section_html.append("<h2>Top NLQ Missing Data Gaps</h2>")
+            topk = mined[:10]
+            fresh_by_ds = {row["dataset"]: row for row in pack["freshness"]}
+            now_dt = _utc_parse(pack["manifest"].get("generated_at", datetime.now(UTC).isoformat()))
+            for ctx in topk:
+                metrics = ", ".join(ctx["metric_set"]) or "metrics"
+                dims = ", ".join(ctx["dim_set"]) or "dimensions"
+                tf = f", timeframe {ctx['timeframe']}" if ctx.get("timeframe") else ""
+                title = (
+                    f"Add column {ctx['missing_target']} to enable {metrics} by {dims}"
+                    if ctx["missing_type"] == "missing_column"
+                    else f"Create dataset {ctx['missing_target']} to support {metrics} by {dims}"
+                )
+                why = (
+                    f"In the last 7 days we saw {ctx['count']} NL queries asking for {metrics} by {dims}{tf}, "
+                    f"but {ctx['missing_type'].replace('_',' ')} {ctx['missing_target']} is not available in the catalog. "
+                    f"Affected datasets: {', '.join(ctx['datasets_ref']) or 'N/A'}. Owners: {', '.join(ctx['owners']) or 'unassigned'}."
+                )
+                ex_lines = [f"[{ch}] {_redact(txt)}" for (_id, ch, txt) in ctx["examples"]]
+                fresh_lines: List[str] = []
+                for ds in ctx["datasets_ref"][:8]:
+                    row = fresh_by_ds.get(ds)
+                    if not row:
+                        fresh_lines.append(f"{ds} (freshness: unknown)")
+                        continue
+                    try:
+                        dt = _utc_parse(row["max_loaded_at"]) if isinstance(row["max_loaded_at"], str) else now_dt
+                        sla_h = int(row["sla_hours"]) if isinstance(row["sla_hours"], str) else int(row["sla_hours"])
+                        breach = (now_dt - dt).total_seconds() > sla_h * 3600
+                        fresh_lines.append(f"{ds} (loaded: {row['max_loaded_at']}, SLA: {sla_h}h, breach: {str(breach).lower()})")
+                    except Exception:
+                        fresh_lines.append(f"{ds} (freshness: unreadable)")
+                # Append md
+                nlq_missing_section_md += [f"### {title}", f"- Why: {why}", "- Examples:"]
+                for ex in ex_lines:
+                    nlq_missing_section_md.append(f"  - {ex}")
+                nlq_missing_section_md.append("- Datasets:")
+                for line in fresh_lines:
+                    nlq_missing_section_md.append(f"  - {line}")
+                nlq_missing_section_md.append("")
+                # Append html
+                nlq_missing_section_html += [f"<h3>{title}</h3>", f"<p><strong>Why:</strong> {why}</p>", "<p><strong>Examples:</strong></p><ul>"]
+                for ex in ex_lines:
+                    nlq_missing_section_html.append(f"<li>{ex}</li>")
+                nlq_missing_section_html.append("</ul>")
+                nlq_missing_section_html.append("<p><strong>Datasets:</strong></p><ul>")
+                for line in fresh_lines:
+                    nlq_missing_section_html.append(f"<li>{line}</li>")
+                nlq_missing_section_html.append("</ul>")
+
+    # report.md and report.html with Top 3 Data Gaps
+    # helpers for plain-language section
+    def _human_gap(label: str) -> str:
+        mapping = {
+            "missing_dataset_or_column": "Missing dataset or column",
+            "grain_or_type_mismatch": "Grain or type mismatch",
+            "freshness_breach": "Freshness breach",
+            "joinability_not_defined": "Joinability not defined",
+            "access_denied": "Access denied",
+            "semantics_unclear": "Semantics unclear",
+            "performance_limit": "Performance limit",
+        }
+        return mapping.get(label, label)
+
+    def _pick_examples(cluster_id: str) -> List[str]:
+        pool = [e for e in events if e["id"] in clusters[cluster_id]["ids"]]
+        pool.sort(key=lambda r: len(r.get("text", "")))
+        seen = set()
+        out: List[str] = []
+        for r in pool:
+            key = (r.get("actor"), r.get("channel"))
+            if key in seen:
+                continue
+            seen.add(key)
+            out.append(f"[{r.get('channel')}] {_redact(r.get('text',''))}")
+            if len(out) >= 3:
+                break
+        return out
+
+    fresh_rows = pack["freshness"]
+    fresh_by_ds = {row["dataset"]: row for row in fresh_rows}
+    now_dt = _utc_parse(pack["manifest"].get("generated_at", datetime.now(UTC).isoformat()))
+
+    def _dataset_fresh_lines(cluster_id: str) -> List[str]:
+        out: List[str] = []
+        for ds in clusters[cluster_id]["datasets"][:8]:
+            row = fresh_by_ds.get(ds)
+            if not row:
+                out.append(f"{ds} (freshness: unknown)")
+                continue
+            try:
+                dt = _utc_parse(row["max_loaded_at"])
+                sla_h = int(row["sla_hours"]) if isinstance(row["sla_hours"], str) else int(row["sla_hours"])
+                breach = (now_dt - dt).total_seconds() > sla_h * 3600
+                out.append(f"{ds} (loaded: {row['max_loaded_at']}, SLA: {sla_h}h, breach: {str(breach).lower()})")
+            except Exception:
+                out.append(f"{ds} (freshness: unreadable)")
+        return out
+
+    top3 = rank[:3]
+
     report_md = out_dir / "report.md"
-    report_md.write_text(
-        "\n".join(
-            [
-                "# Data Gaps Report (1 week)",
-                "",
-                f"Clusters: {len(clusters)}",
-                "",
-                "## Top Backlog Items",
-                "",
-            ]
-            + [f"- [{gid}] {summaries[gid]['title']}" for gid in sorted(clusters.keys())[:50]]
-        )
-    )
+    md_lines: List[str] = []
+    md_lines += ["# Data Gaps Report (1 week)", "", f"Clusters: {len(clusters)}", ""]
+    md_lines += ["## Top 3 Data Gaps (Plain Language)"]
+    for gid in top3:
+        cl = clusters[gid]
+        md_lines += [
+            f"### {summaries[gid]['title']}",
+            f"- Why: {summaries[gid]['why']}",
+            f"- Root cause: {', '.join(_human_gap(g) for g in cl['gap_types']) or 'N/A'}",
+            f"- Impact: {len(cl['ids'])} related items; top audience: {audience_top or 'N/A'}",
+            "- Examples:",
+        ]
+        for ex in _pick_examples(gid):
+            md_lines.append(f"  - {ex}")
+        md_lines.append("- Datasets:")
+        for line in _dataset_fresh_lines(gid):
+            md_lines.append(f"  - {line}")
+        md_lines.append("")
+    # Optional NLQ missing section
+    if nlq_missing_section_md:
+        md_lines += nlq_missing_section_md
+    md_lines += ["## Top Backlog Items", ""]
+    md_lines += [f"- [{gid}] {summaries[gid]['title']}" for gid in rank[:50]]
+    report_md.write_text("\n".join(md_lines))
+
     report_html = out_dir / "report.html"
-    report_html.write_text(
+    html_lines: List[str] = []
+    html_lines.append(
         """
 <!doctype html>
-<meta charset="utf-8"/>
+<meta charset=\"utf-8\"/>
 <title>Data Gaps Report</title>
 <style>body{font-family:system-ui,Arial;margin:2rem;max-width:900px}li{margin:.25rem 0}</style>
 <h1>Data Gaps Report (1 week)</h1>
 <p>See backlog.csv for details.</p>
-<h2>Top Backlog Items</h2>
-<ul>
 """
-        + "\n".join(
-            [
-                f"<li><code>{gid}</code> {summaries[gid]['title']}</li>"
-                for gid in sorted(clusters.keys())[:50]
-            ]
-        )
-        + "\n</ul>\n"
     )
+    html_lines.append("<h2>Top 3 Data Gaps (Plain Language)</h2>")
+    for gid in top3:
+        cl = clusters[gid]
+        html_lines.append(f"<h3>{summaries[gid]['title']}</h3>")
+        html_lines.append(f"<p><strong>Why:</strong> {summaries[gid]['why']}</p>")
+        html_lines.append(f"<p><strong>Root cause:</strong> {', '.join(_human_gap(g) for g in cl['gap_types']) or 'N/A'}</p>")
+        html_lines.append(f"<p><strong>Impact:</strong> {len(cl['ids'])} related items; top audience: {audience_top or 'N/A'}</p>")
+        html_lines.append("<p><strong>Examples:</strong></p><ul>")
+        for ex in _pick_examples(gid):
+            html_lines.append(f"<li>{ex}</li>")
+        html_lines.append("</ul>")
+        html_lines.append("<p><strong>Datasets:</strong></p><ul>")
+        for line in _dataset_fresh_lines(gid):
+            html_lines.append(f"<li>{line}</li>")
+        html_lines.append("</ul>")
+    # Optional NLQ mined section
+    report_has_nlq_section = False
+    try:
+        # If we wrote the md section, the html list will be non-empty
+        report_has_nlq_section = bool('nlq_missing_section_html' in locals() and nlq_missing_section_html)
+    except Exception:
+        report_has_nlq_section = False
+    if report_has_nlq_section:
+        html_lines.append("<h2>Top NLQ Missing Data Gaps</h2>")
+        html_lines.extend(nlq_missing_section_html)
+    if nlq_missing_section_html:
+        html_lines.append("<h2>Top NLQ Missing Data Gaps</h2>")
+        html_lines.extend(nlq_missing_section_html)
+    html_lines.append("<h2>Top Backlog Items</h2><ul>")
+    for gid in rank[:50]:
+        html_lines.append(f"<li><code>{gid}</code> {summaries[gid]['title']}</li>")
+    html_lines.append("</ul>")
+    report_html.write_text("\n".join(html_lines))
 
     log.info("Report done: clusters=%d", len(clusters))
+    # write cost summary
+    cost = client.cost_summary()
+    (artifacts / "cost.json").write_text(json.dumps(cost, indent=2, sort_keys=True))
+
     return {
         "clusters": len(clusters),
         "backlog_items": len(clusters),

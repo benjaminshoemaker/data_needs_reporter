@@ -26,5 +26,6 @@ include-package-data = true
 
 [tool.setuptools.package-data]
 datagap_synth = [
-  "schemas/*.json"
+  "schemas/*.json",
+  "scenarios/*.yaml"
 ]

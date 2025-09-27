@@ -27,6 +27,12 @@ def _cmd_gen(args: argparse.Namespace) -> int:
         api_base=args.api_base,
         api_key=os.environ.get("LLM_API_KEY"),
         llm_limit=args.limit_llm,
+        llm_budget_tokens=args.llm_budget_tokens,
+        sample_per_channel=args.sample_per_channel,
+        sample_random=getattr(args, "sample_random", False),
+        source=getattr(args, "source", "all"),
+        focus_gaps=[s.strip() for s in getattr(args, "focus_gaps", "").split(",") if s.strip()],
+        min_frequency=getattr(args, "min_frequency", 3),
     )
     print(json.dumps(rc, indent=2, sort_keys=True))
     return 0
@@ -53,10 +59,27 @@ def _build() -> argparse.ArgumentParser:
     sp.add_argument("--owners", dest="owners", help="Owners YAML file", default=None)
     sp.add_argument("--p95-ms", dest="p95_ms", type=int, default=5000, help="Slow threshold in ms")
     sp.add_argument("--llm", choices=["on", "off"], default="on")
-    sp.add_argument("--model", default="gpt-5-mini")
-    sp.add_argument("--embed", default="text-embedding-3-small")
+    sp.add_argument("--model", default="gpt-4o-mini", help="LLM model (default: gpt-4o-mini, cheaper; override with gpt-5)")
+    sp.add_argument("--embed", default="text-embedding-3-small", help="Embedding model (default: text-embedding-3-small; override with text-embedding-3-large)")
     sp.add_argument("--api-base", dest="api_base", default="https://api.openai.com")
     sp.add_argument("--limit-llm", dest="limit_llm", type=int, default=0, help="Cap number of LLM calls (debug)")
+    sp.add_argument("--llm-budget-tokens", dest="llm_budget_tokens", type=int, default=0, help="Hard budget on total LLM tokens; stops LLM when exceeded")
+    sp.add_argument(
+        "--sample",
+        dest="sample_per_channel",
+        type=int,
+        default=25,
+        help="Process only the first N per channel (nlq/slack/email). Use 0 to process all.",
+    )
+    sp.add_argument(
+        "--sample-random",
+        dest="sample_random",
+        action="store_true",
+        help="When sampling, pick N random items per channel instead of the first N.",
+    )
+    sp.add_argument("--source", choices=["all", "nlq", "slack", "email"], default="all", help="Limit processing to one source (default: all)")
+    sp.add_argument("--focus-gaps", default="", help="CSV gap types to focus (e.g., missing_column,missing_asset)")
+    sp.add_argument("--min-frequency", type=int, default=3, help="Min frequency for NLQ gap mining")
     sp.add_argument("--verbose", action="store_true", help="Enable verbose logging")
     sp.set_defaults(func=_cmd_gen)
 

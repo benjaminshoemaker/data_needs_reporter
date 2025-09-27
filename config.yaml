@@ -1,6 +1,7 @@
 schema_version: 1.0.0
 time_window_days: 7
 seed: null
+scenario: enterprise
 actors:
 - u_alex
 - u_riley
@@ -10,7 +11,7 @@ audience_weights:
   Ops: 2
   Eng: 1
 nlq:
-  count: 800
+  count: 1500
   success_rate: 0.65
   slow_rate: 0.1
   uncertain_rate: 0.05
@@ -24,11 +25,23 @@ nlq:
     access_denied: 0.03
     docs_missing: 0.12
     performance_limit: 0.04
+  languages:
+  - lang: en
+    pct: 0.9
+  - lang: es
+    pct: 0.05
+  - lang: fr
+    pct: 0.05
+  noise:
+    typos_pct: 0.07
+    abbreviations_pct: 0.12
+    vague_time_pct: 0.1
+    oos_term_pct: 0.12
 slack:
-  threads: 60
-  replies_mean: 4
+  threads: 120
+  replies_mean: 5
 email:
-  threads: 20
+  threads: 40
   replies_mean: 3
 catalog:
   domains:
@@ -36,8 +49,9 @@ catalog:
   - customers
   - products
   - marketing
-  mart_tables: 10
-  staging_tables: 20
+  - finance
+  mart_tables: 30
+  staging_tables: 50
   freshness_sla_hours:
   - 24
   - 48

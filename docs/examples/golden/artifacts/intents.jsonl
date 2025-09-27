@@ -1,0 +1,75 @@
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "s_0002", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": ["segment", "dt"], "dimensions": ["segment", "dt"], "filters": ["dt >= current_date - interval '30 day'"], "id": "s_0428", "metric": [], "tables_ref": ["mart_finance_027"], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": ["us_only over today for cohort xyz"], "id": "q_001061", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": ["last month"], "id": "s_0150", "metric": [], "tables_ref": [], "timeframe": "month"}
+{"cols_ref": ["sku", "dt", "category"], "dimensions": ["sku", "dt", "category"], "filters": ["dt >= current_date - interval '30 day'"], "id": "s_0234", "metric": [], "tables_ref": ["stg_products_013"], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": ["free_plan in the last quarter for cohort xyz"], "id": "q_001122", "metric": [], "tables_ref": [], "timeframe": "quarter"}
+{"cols_ref": ["orders", "dt", "visits"], "dimensions": ["dt"], "filters": ["dt >= current_date - interval '30 day'"], "id": "s_0204", "metric": ["orders", "visits"], "tables_ref": ["stg_orders_010"], "timeframe": "week"}
+{"cols_ref": [], "dimensions": [], "filters": ["free_plan in the today"], "id": "q_000275", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "s_0416", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": ["last week"], "id": "s_0364", "metric": [], "tables_ref": [], "timeframe": "week"}
+{"cols_ref": ["visits", "state"], "dimensions": ["state"], "filters": ["us_only in the today"], "id": "q_001100", "metric": ["visits"], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": ["us_only over last quarter"], "id": "q_000360", "metric": [], "tables_ref": [], "timeframe": "quarter"}
+{"cols_ref": ["units"], "dimensions": [], "filters": ["u_"], "id": "q_001113", "metric": ["units"], "tables_ref": [], "timeframe": "month"}
+{"cols_ref": ["dt", "state"], "dimensions": ["dt", "state"], "filters": ["dt >= current_date - interval '7 day'", "cohort xyz"], "id": "q_000500", "metric": [], "tables_ref": ["mart_products_023"], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": ["paid_plan over last 90 days"], "id": "q_001153", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "s_0291", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "s_0538", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "s_0278", "metric": [], "tables_ref": ["mart_products_023"], "timeframe": "week"}
+{"cols_ref": ["dt"], "dimensions": ["dt"], "filters": ["dt >= current_date - interval '7 day'", "enterprise_only in the last month"], "id": "q_000622", "metric": [], "tables_ref": ["mart_finance_003"], "timeframe": "week"}
+{"cols_ref": [], "dimensions": [], "filters": ["free_plan over last 90 days"], "id": "q_000420", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": ["orders", "customers", "dt"], "dimensions": ["dt"], "filters": ["dt >= current_date - interval '7 day'", "free_plan over today"], "id": "q_000862", "metric": ["orders", "customers"], "tables_ref": ["stg_orders_045"], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "e_0098", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "q_001016", "metric": [], "tables_ref": [], "timeframe": "week"}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "s_0232", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": ["channel"], "dimensions": ["channel"], "filters": [], "id": "q_000759", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": ["orders", "device"], "dimensions": ["device"], "filters": [], "id": "q_001428", "metric": ["orders"], "tables_ref": [], "timeframe": "quarter"}
+{"cols_ref": [], "dimensions": [], "filters": ["paid_plan over yesterday"], "id": "q_000565", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "q_001379", "metric": [], "tables_ref": [], "timeframe": "month"}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "s_0673", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": ["eu_only in the last month"], "id": "q_000842", "metric": [], "tables_ref": [], "timeframe": "month"}
+{"cols_ref": ["state"], "dimensions": ["state"], "filters": [], "id": "s_0423", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "e_0081", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": ["us_only in the last quarter"], "id": "q_000099", "metric": [], "tables_ref": [], "timeframe": "quarter"}
+{"cols_ref": ["channel"], "dimensions": ["channel"], "filters": [], "id": "q_001008", "metric": [], "tables_ref": [], "timeframe": "quarter"}
+{"cols_ref": ["orders", "customers", "dt", "state"], "dimensions": ["dt", "state"], "filters": ["dt >= current_date - interval '7 day'", "enterprise_only over last week"], "id": "q_000152", "metric": ["orders", "customers"], "tables_ref": ["mart_orders_013"], "timeframe": "week"}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "s_0605", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": ["sku", "orders", "dt", "state"], "dimensions": ["sku", "dt", "state"], "filters": ["t1.dt >= current_date - interval '7 day' group by 1"], "id": "q_000988", "metric": ["orders"], "tables_ref": ["stg_finance_023", "stg_orders_048"], "timeframe": null}
+{"cols_ref": ["visits"], "dimensions": [], "filters": ["eu_only in the today"], "id": "q_001372", "metric": ["visits"], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": ["enterprise_only in the today"], "id": "q_000403", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": ["sku", "orders", "customers", "dt"], "dimensions": ["sku", "dt"], "filters": ["t1.dt >= current_date - interval '7 day' group by 1", "enterprise_only in the last quarter"], "id": "q_001135", "metric": ["orders", "customers"], "tables_ref": ["stg_customers_014", "mart_orders_012"], "timeframe": "quarter"}
+{"cols_ref": ["visits"], "dimensions": [], "filters": ["eu_only over last quarter"], "id": "q_001177", "metric": ["visits"], "tables_ref": [], "timeframe": "quarter"}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "s_0395", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "s_0657", "metric": [], "tables_ref": ["mart_marketing_007"], "timeframe": null}
+{"cols_ref": ["dt"], "dimensions": ["dt"], "filters": ["dt >= current_date - interval '7 day'"], "id": "s_0072", "metric": [], "tables_ref": ["stg_marketing_019"], "timeframe": null}
+{"cols_ref": ["orders"], "dimensions": [], "filters": [], "id": "s_0194", "metric": ["orders"], "tables_ref": ["stg_orders_029"], "timeframe": null}
+{"cols_ref": ["dt", "revenue"], "dimensions": ["dt"], "filters": ["dt >= current_date - interval '30 day'"], "id": "s_0402", "metric": ["revenue"], "tables_ref": ["stg_products_028"], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "e_0087", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "s_0536", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": ["country"], "dimensions": [], "filters": [], "id": "s_0643", "metric": ["country"], "tables_ref": [], "timeframe": null}
+{"cols_ref": ["orders", "dt"], "dimensions": ["dt"], "filters": ["dt >= current_date - interval '7 day'"], "id": "s_0555", "metric": ["orders"], "tables_ref": ["stg_orders_029"], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "s_0669", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": ["channel", "orders"], "dimensions": ["channel"], "filters": [], "id": "s_0220", "metric": ["orders"], "tables_ref": ["mart_orders_008"], "timeframe": null}
+{"cols_ref": ["orders", "dt"], "dimensions": ["dt"], "filters": ["dt >= current_date - interval '7 day'"], "id": "s_0181", "metric": ["orders"], "tables_ref": ["stg_orders_041"], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "e_0057", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": ["orders"], "dimensions": [], "filters": ["stg_orders_039"], "id": "e_0016", "metric": ["orders"], "tables_ref": ["stg_orders_039"], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "e_0012", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "e_0026", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "e_0127", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": ["orders"], "dimensions": [], "filters": ["stg_orders_039"], "id": "e_0037", "metric": ["orders"], "tables_ref": ["stg_orders_039"], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "e_0051", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "e_0052", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "e_0029", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": ["orders"], "dimensions": [], "filters": [], "id": "e_0059", "metric": ["orders"], "tables_ref": ["stg_orders_039"], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "e_0132", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "e_0071", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "e_0121", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": ["orders"], "dimensions": [], "filters": ["stg_orders_039"], "id": "e_0034", "metric": ["orders"], "tables_ref": ["stg_orders_039"], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "e_0061", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "e_0101", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "e_0080", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "e_0008", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "e_0021", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "e_0086", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "e_0060", "metric": [], "tables_ref": [], "timeframe": null}
+{"cols_ref": [], "dimensions": [], "filters": [], "id": "e_0009", "metric": [], "tables_ref": [], "timeframe": null}

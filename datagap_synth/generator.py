@@ -76,7 +76,32 @@ def generate_pack(cfg_path: Path, out_dir: Path, seed: int | None) -> Dict:
     hashes = collect_file_hashes(out_dir)
     write_json(out_dir / "hashes.json", hashes)
 
-    return {
+    # Summary metrics
+    # Load files for summary
+    def _load_jsonl(path: Path):
+        return [json.loads(l) for l in path.read_text().splitlines() if l.strip()]
+
+    queries = _load_jsonl(out_dir / "nl_queries.jsonl")
+    slack = _load_jsonl(out_dir / "slack.jsonl")
+    email = _load_jsonl(out_dir / "email.jsonl")
+    total_events = len(queries) + len(slack) + len(email)
+    multilingual = sum(1 for r in queries if r.get("lang") and r.get("lang") != "en")
+    ref_q = sum(1 for r in slack if r.get("referenced_query_id")) + sum(1 for r in email if r.get("referenced_query_id"))
+    # top metrics/dims
+    from collections import Counter
+    top_metrics = [m for r in queries for m in r.get("metrics", [])]
+    top_dims = [d for r in queries for d in r.get("dims", [])]
+    top10_metrics = [k for k,_ in Counter(top_metrics).most_common(10)]
+    top10_dims = [k for k,_ in Counter(top_dims).most_common(10)]
+
+    result = {
         "pack_dir": str(out_dir),
         "counts": manifest["counts"],
+        "summary": {
+            "pct_multilingual": round(100.0 * multilingual / max(1, len(queries)), 2),
+            "pct_with_references": round(100.0 * ref_q / max(1, total_events), 2),
+            "top_metrics": top10_metrics,
+            "top_dims": top10_dims,
+        },
     }
+    return result

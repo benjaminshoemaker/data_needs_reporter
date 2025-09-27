@@ -3,9 +3,12 @@ pyproject.toml
 datagap_report/__init__.py
 datagap_report/__main__.py
 datagap_report/cli.py
+datagap_report/gap_miner.py
 datagap_report/llm.py
+datagap_report/normalize.py
 datagap_report/report.py
 datagap_report/schemas.py
+datagap_report/score.py
 datagap_synth/__init__.py
 datagap_synth/__main__.py
 datagap_synth/catalog.py
@@ -24,6 +27,9 @@ datagap_synth.egg-info/dependency_links.txt
 datagap_synth.egg-info/entry_points.txt
 datagap_synth.egg-info/requires.txt
 datagap_synth.egg-info/top_level.txt
+datagap_synth/scenarios/enterprise.yaml
 datagap_synth/schemas/email.schema.json
 datagap_synth/schemas/nl_query.schema.json
 datagap_synth/schemas/slack.schema.json
+tests/test_gap_miner.py
+tests/test_normalize_and_score.py

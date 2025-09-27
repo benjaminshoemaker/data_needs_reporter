@@ -1,63 +1,27 @@
 digraph hotspots {
 rankdir=LR;
-  "stg_orders_012" [label="stg_orders_012
-14 refs"];
-  "stg_orders_008" [label="stg_orders_008
-12 refs"];
-  "stg_products_019" [label="stg_products_019
-11 refs"];
-  "stg_orders_009" [label="stg_orders_009
-11 refs"];
-  "mart_customers_009" [label="mart_customers_009
-10 refs"];
-  "mart_marketing_003" [label="mart_marketing_003
-10 refs"];
-  "stg_products_016" [label="stg_products_016
-10 refs"];
-  "stg_customers_015" [label="stg_customers_015
-9 refs"];
-  "mart_customers_001" [label="mart_customers_001
-9 refs"];
-  "mart_orders_002" [label="mart_orders_002
-9 refs"];
-  "mart_marketing_007" [label="mart_marketing_007
-9 refs"];
-  "stg_orders_005" [label="stg_orders_005
-8 refs"];
-  "stg_customers_001" [label="stg_customers_001
-8 refs"];
-  "stg_customers_011" [label="stg_customers_011
-8 refs"];
-  "mart_products_000" [label="mart_products_000
-8 refs"];
-  "stg_orders_002" [label="stg_orders_002
-8 refs"];
-  "stg_orders_000" [label="stg_orders_000
-8 refs"];
-  "mart_orders_005" [label="mart_orders_005
-8 refs"];
-  "stg_products_003" [label="stg_products_003
-8 refs"];
-  "mart_orders_004" [label="mart_orders_004
+  "mart_products_023" [label="mart_products_023
 7 refs"];
-  "stg_products_013" [label="stg_products_013
-7 refs"];
-  "stg_orders_018" [label="stg_orders_018
-7 refs"];
-  "stg_marketing_014" [label="stg_marketing_014
-6 refs"];
-  "mart_marketing_008" [label="mart_marketing_008
-6 refs"];
-  "stg_orders_004" [label="stg_orders_004
-5 refs"];
-  "stg_customers_006" [label="stg_customers_006
-5 refs"];
-  "stg_customers_010" [label="stg_customers_010
-4 refs"];
-  "stg_products_007" [label="stg_products_007
-4 refs"];
-  "stg_customers_017" [label="stg_customers_017
-4 refs"];
-  "mart_orders_006" [label="mart_orders_006
-3 refs"];
+  "stg_customers_014" [label="stg_customers_014
+2 refs"];
+  "stg_products_004" [label="stg_products_004
+1 refs"];
+  "mart_marketing_004" [label="mart_marketing_004
+1 refs"];
+  "mart_marketing_018" [label="mart_marketing_018
+1 refs"];
+  "stg_marketing_043" [label="stg_marketing_043
+1 refs"];
+  "stg_products_005" [label="stg_products_005
+1 refs"];
+  "stg_marketing_035" [label="stg_marketing_035
+1 refs"];
+  "stg_customers_042" [label="stg_customers_042
+1 refs"];
+  "stg_marketing_026" [label="stg_marketing_026
+1 refs"];
+  "mart_finance_008" [label="mart_finance_008
+1 refs"];
+  "stg_marketing_021" [label="stg_marketing_021
+1 refs"];
 }

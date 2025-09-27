@@ -1,0 +1,24 @@
+# Generated data and reports (excluded)
+packs/**
+out/**
+artifacts/**
+report*.md
+report*.html
+*.pdf
+
+# Keep fixtures and examples
+!fixtures/**
+!docs/examples/**
+
+# Python
+__pycache__/
+.pytest_cache/
+.venv/
+*.pyc
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/
+
+.env.local

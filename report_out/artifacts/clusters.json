@@ -1,2672 +1,385 @@
 {
   "c_0001": {
-    "datasets": [
-      "mart_marketing_007",
-      "stg_customers_001",
-      "stg_customers_015",
-      "stg_orders_000"
-    ],
+    "datasets": [],
     "examples": [
-      "daily units by state for vip last year",
-      "daily units by state for vip last year",
-      "daily units by state for returning last year",
-      "daily units by state for vip last 30 days",
-      "daily units by state for vip last quarter"
+      "trend of churn for enterprise_only over todya",
+      "trend of feature_adpotion for eu_only over yesterday",
+      "Join on customer_id",
+      "Re: : Added notes to the doc.",
+      "Missing industry"
     ],
-    "gap_types": [],
+    "gap_types": [
+      "grain_or_type_mismatch",
+      "missing_dataset_or_column",
+      "semantics_unclear"
+    ],
     "ids": [
-      "q_000331",
-      "q_000296",
-      "q_000390",
-      "q_000781",
-      "q_000247"
+      "q_000051",
+      "q_000437",
+      "s_0274",
+      "e_0138",
+      "s_0287",
+      "q_000833",
+      "q_000399",
+      "s_0632",
+      "s_0584",
+      "s_0013",
+      "s_0586",
+      "s_0134",
+      "s_0695",
+      "s_0181",
+      "e_0035",
+      "s_0524",
+      "e_0010",
+      "s_0506",
+      "s_0285",
+      "s_0109",
+      "e_0123",
+      "e_0037",
+      "e_0045",
+      "e_0125",
+      "e_0068",
+      "e_0056",
+      "e_0066",
+      "e_0076",
+      "e_0027",
+      "e_0034",
+      "e_0085",
+      "e_0083",
+      "e_0120",
+      "e_0071"
     ]
   },
   "c_0002": {
     "datasets": [],
     "examples": [
-      "I'll check the docs",
-      "I'll check the docs",
-      "I'll check the docs",
-      "Re: : Approved access",
-      "Re: : Added notes to the doc"
+      "daily ctr by month for paid_plan in the last 90 days",
+      "daily cpl by month for paid_plan in the last month",
+      "Can someone pull cpl by plan for last month?",
+      "Can someone pull aov by date for last month?"
     ],
-    "gap_types": [],
+    "gap_types": [
+      "missing_dataset_or_column",
+      "semantics_unclear"
+    ],
     "ids": [
-      "s_0286",
-      "s_0097",
-      "s_0179",
-      "e_0020",
-      "e_0049",
-      "s_0227",
-      "e_0059",
-      "s_0021",
-      "s_0197",
-      "s_0245",
-      "s_0048",
-      "s_0154",
-      "s_0140",
-      "e_0027",
-      "s_0020",
-      "e_0072",
-      "s_0083",
-      "e_0043",
-      "s_0022",
-      "s_0077",
-      "s_0110",
-      "s_0099",
-      "s_0081",
-      "s_0063",
-      "s_0024",
-      "s_0109",
-      "e_0017",
-      "s_0231",
-      "s_0028",
-      "s_0055",
-      "s_0263",
-      "s_0102",
-      "s_0259",
-      "e_0073",
-      "s_0116",
-      "s_0283",
-      "e_0016",
-      "s_0043",
-      "s_0205",
-      "s_0125",
-      "e_0026",
-      "s_0208",
-      "s_0239",
-      "s_0027",
-      "s_0184",
-      "s_0085",
-      "s_0276",
-      "s_0126",
-      "s_0035",
-      "s_0214",
-      "e_0005",
-      "s_0045",
-      "e_0050",
-      "s_0242",
-      "s_0033",
-      "s_0059",
-      "s_0260",
-      "e_0044",
-      "s_0123",
-      "s_0267",
-      "s_0015",
-      "s_0191",
-      "s_0253",
-      "e_0004",
-      "s_0124",
-      "e_0032",
-      "e_0052",
-      "s_0211",
-      "s_0025",
-      "s_0277",
-      "s_0100",
-      "s_0008",
-      "s_0215",
-      "s_0167",
-      "s_0237",
-      "e_0014",
-      "s_0153",
-      "e_0007",
-      "e_0034",
-      "s_0122",
-      "s_0271",
-      "s_0264",
-      "s_0181",
-      "s_0206",
-      "s_0101",
-      "e_0038",
-      "s_0201",
-      "s_0225",
-      "s_0146",
-      "s_0096",
-      "s_0210",
-      "s_0098",
-      "s_0080",
-      "s_0072",
-      "s_0268",
-      "s_0166",
-      "s_0034",
-      "s_0266",
-      "s_0014",
-      "s_0058",
-      "s_0170",
-      "s_0011",
-      "s_0049",
-      "s_0180",
-      "s_0075",
-      "s_0186",
-      "s_0120",
-      "s_0054",
-      "s_0007",
-      "e_0022",
-      "s_0177",
-      "s_0275",
-      "e_0048",
-      "s_0133",
-      "s_0103",
-      "s_0026",
-      "s_0185",
-      "s_0160",
-      "s_0232",
-      "s_0087",
-      "s_0129",
-      "s_0070",
-      "e_0071",
-      "s_0010",
-      "s_0255",
-      "e_0037",
-      "e_0067",
-      "e_0062",
-      "e_0035",
-      "s_0230",
-      "s_0039",
-      "s_0030",
-      "s_0193",
-      "s_0165",
-      "s_0013",
-      "s_0203",
-      "e_0039",
-      "s_0041",
-      "s_0147",
-      "s_0073",
-      "s_0164",
-      "s_0236",
-      "s_0234",
-      "e_0021",
-      "s_0009",
-      "s_0281",
-      "e_0013",
-      "s_0017",
-      "s_0221",
-      "s_0004",
-      "s_0132",
-      "s_0269",
-      "s_0175",
-      "e_0031",
-      "s_0066",
-      "s_0257",
-      "e_0070",
-      "s_0233",
-      "s_0219",
-      "s_0092",
-      "e_0065",
-      "s_0118",
-      "s_0258",
-      "e_0056",
-      "s_0121",
-      "e_0053",
-      "s_0228",
-      "e_0046",
-      "s_0189",
-      "s_0064",
-      "s_0095",
-      "s_0202",
-      "e_0009",
-      "s_0173",
-      "s_0243",
-      "e_0018",
-      "s_0156",
-      "s_0037",
-      "s_0091",
-      "s_0076",
-      "s_0117",
-      "e_0006",
-      "s_0171",
-      "s_0145",
-      "s_0069",
-      "e_0036",
-      "s_0006",
-      "e_0063",
-      "s_0200",
-      "s_0288",
-      "s_0046",
-      "e_0024",
-      "s_0226",
-      "s_0282",
-      "s_0031",
-      "e_0040",
-      "s_0104",
-      "s_0094",
-      "s_0071",
-      "s_0187",
-      "s_0198",
-      "s_0217",
-      "s_0149",
-      "s_0119",
-      "s_0174",
-      "s_0182",
-      "s_0250",
-      "s_0161",
-      "s_0235",
-      "s_0079",
-      "s_0137",
-      "s_0111",
-      "s_0032",
-      "s_0105",
-      "s_0223",
-      "s_0247",
-      "s_0068",
-      "s_0256",
-      "e_0061",
-      "e_0045",
-      "s_0176",
-      "s_0057",
-      "s_0188",
-      "s_0038",
-      "s_0246",
-      "s_0036",
-      "s_0023",
-      "s_0157",
-      "s_0131",
-      "s_0012",
-      "s_0192",
-      "s_0270",
-      "s_0089",
-      "e_0010",
-      "e_0003",
-      "s_0213",
-      "s_0279",
-      "s_0251",
-      "s_0196",
-      "s_0138",
-      "s_0082",
-      "s_0190",
-      "s_0052",
-      "e_0029",
-      "e_0002",
-      "s_0114",
-      "s_0229",
-      "s_0084",
-      "s_0061",
-      "s_0003",
-      "s_0144",
-      "s_0204",
-      "s_0220",
-      "s_0248",
-      "s_0159",
-      "e_0058",
-      "e_0060",
-      "s_0240",
-      "e_0015",
-      "s_0107",
-      "s_0047",
-      "s_0278",
-      "e_0051",
-      "s_0130",
-      "s_0134",
-      "s_0168",
-      "s_0254",
-      "s_0262",
-      "s_0051",
-      "e_0041",
-      "e_0054",
-      "s_0127",
-      "e_0042",
-      "s_0108",
-      "e_0064",
-      "s_0209",
-      "s_0141",
-      "s_0086",
-      "s_0222",
-      "e_0033",
-      "s_0113",
-      "s_0284",
-      "s_0224",
-      "s_0106",
-      "s_0050",
-      "s_0088",
-      "s_0078",
-      "s_0195",
-      "s_0143",
-      "s_0152",
-      "s_0074",
-      "s_0019",
-      "s_0199",
-      "s_0162",
-      "s_0053",
-      "s_0090",
-      "s_0128",
-      "s_0056",
-      "s_0062",
-      "s_0042",
-      "s_0151",
-      "s_0194",
-      "s_0241",
-      "s_0067",
-      "s_0158",
-      "s_0218",
-      "s_0112",
-      "s_0139",
-      "e_0011",
-      "e_0055",
-      "s_0169",
-      "s_0002",
-      "s_0273",
-      "s_0280",
-      "s_0238",
-      "s_0216",
-      "s_0142",
-      "s_0150",
-      "s_0018",
-      "s_0029"
+      "q_000900",
+      "q_000551",
+      "s_0608",
+      "s_0566"
     ]
   },
   "c_0003": {
-    "datasets": [
-      "mart_orders_004",
-      "stg_customers_001",
-      "stg_orders_002",
-      "stg_orders_005",
-      "stg_orders_009",
-      "stg_products_019"
-    ],
+    "datasets": [],
     "examples": [
-      "daily revenue by channel for new last year",
-      "daily revenue by channel for new last 30 days",
-      "daily revenue by channel for vip last 30 days",
-      "daily revenue by channel for returning last 30 days",
-      "daily revenue by channel for promo last 30 days"
+      "daily feature_adoption by region for free_plan in the last quarter",
+      "trend of bugs for us_only over last quarter"
     ],
     "gap_types": [
-      "access_denied",
-      "freshness_breach",
-      "grain_or_type_mismatch",
-      "missing_dataset_or_column",
-      "semantics_unclear"
+      "missing_dataset_or_column"
     ],
     "ids": [
-      "q_000120",
-      "q_000588",
-      "q_000125",
-      "q_000606",
-      "q_000040",
-      "q_000366",
-      "q_000221",
-      "q_000303",
-      "q_000101",
-      "q_000023",
-      "q_000621",
-      "q_000725",
-      "q_000019",
-      "q_000506",
-      "q_000565",
-      "q_000460",
-      "q_000224",
-      "q_000282",
-      "q_000391",
-      "q_000354",
-      "q_000552"
+      "q_000185",
+      "q_000285"
     ]
   },
   "c_0004": {
-    "datasets": [
-      "stg_orders_008"
-    ],
-    "examples": [
-      "daily orders by sku for all last quarter",
-      "daily orders by sku for new last quarter",
-      "daily orders by sku for promo last quarter",
-      "daily orders by sku for new last quarter",
-      "daily orders by sku for promo last year"
-    ],
-    "gap_types": [
-      "access_denied",
-      "freshness_breach",
-      "grain_or_type_mismatch",
-      "missing_dataset_or_column",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000579",
-      "q_000497",
-      "q_000699",
-      "q_000671",
-      "q_000176",
-      "q_000774",
-      "q_000619",
-      "q_000077",
-      "q_000105",
-      "q_000110"
-    ]
-  },
-  "c_0005": {
-    "datasets": [
-      "mart_customers_001",
-      "mart_marketing_003",
-      "stg_orders_000",
-      "stg_products_003",
-      "stg_products_019"
-    ],
-    "examples": [
-      "daily units by category for vip last quarter",
-      "daily units by category for all last quarter",
-      "daily units by category for vip last quarter",
-      "daily units by category for all last quarter",
-      "daily units by category for returning last quarter"
-    ],
-    "gap_types": [
-      "grain_or_type_mismatch",
-      "joinability_not_defined",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000353",
-      "q_000356",
-      "q_000188",
-      "q_000237",
-      "q_000799",
-      "q_000501",
-      "q_000184",
-      "q_000544",
-      "q_000152",
-      "q_000556",
-      "q_000698",
-      "q_000656",
-      "q_000230",
-      "q_000163",
-      "q_000028",
-      "q_000234"
-    ]
-  },
-  "c_0006": {
     "datasets": [],
     "examples": [
-      "Is the revenue metric delayed today?",
-      "Is the revenue metric delayed today?",
-      "Is the revenue metric delayed today?",
-      "Is the revenue metric delayed today?",
-      "Is the revenue metric delayed today?"
-    ],
-    "gap_types": [],
-    "ids": [
-      "s_0249",
-      "s_0016",
-      "s_0135",
-      "s_0148",
-      "s_0155",
-      "s_0274",
-      "s_0136",
-      "s_0261",
-      "s_0212",
-      "s_0285",
-      "s_0287",
-      "s_0265",
-      "s_0065",
-      "s_0044",
-      "s_0172",
-      "s_0178"
-    ]
-  },
-  "c_0007": {
-    "datasets": [
-      "mart_customers_001",
-      "stg_orders_002",
-      "stg_products_013"
-    ],
-    "examples": [
-      "daily orders by country for vip last quarter",
-      "daily orders by country for promo last quarter",
-      "daily orders by country for vip last quarter",
-      "daily orders by country for promo last quarter",
-      "daily orders by country for vip last quarter"
-    ],
-    "gap_types": [
-      "access_denied",
-      "grain_or_type_mismatch",
-      "joinability_not_defined",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000740",
-      "q_000590",
-      "q_000722",
-      "q_000016",
-      "q_000170",
-      "q_000576",
-      "q_000113",
-      "q_000493",
-      "q_000416",
-      "q_000468",
-      "q_000545",
-      "q_000054",
-      "q_000632",
-      "q_000346",
-      "q_000068",
-      "q_000755"
-    ]
-  },
-  "c_0008": {
-    "datasets": [
-      "mart_customers_001",
-      "mart_orders_005",
-      "stg_customers_006",
-      "stg_customers_011",
-      "stg_customers_015",
-      "stg_marketing_014",
-      "stg_orders_009",
-      "stg_orders_018",
-      "stg_products_019"
-    ],
-    "examples": [
-      "daily revenue by device for all last 30 days",
-      "daily revenue by device for vip last 30 days",
-      "daily revenue by device for returning last 30 days",
-      "daily revenue by device for vip last 30 days",
-      "daily revenue by device for promo last 30 days"
-    ],
-    "gap_types": [
-      "freshness_breach",
-      "grain_or_type_mismatch",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000469",
-      "q_000057",
-      "q_000462",
-      "q_000277",
-      "q_000573",
-      "q_000640",
-      "q_000684",
-      "q_000558",
-      "q_000718",
-      "q_000059",
-      "q_000480",
-      "q_000411",
-      "q_000258",
-      "q_000241",
-      "q_000527",
-      "q_000749",
-      "q_000412",
-      "q_000031",
-      "q_000378",
-      "q_000687",
-      "q_000225",
-      "q_000589",
-      "q_000248",
-      "q_000377",
-      "q_000178",
-      "q_000723",
-      "q_000530",
-      "q_000708",
-      "q_000053",
-      "q_000140",
-      "q_000732",
-      "q_000669",
-      "q_000451"
-    ]
-  },
-  "c_0009": {
-    "datasets": [
-      "mart_marketing_007",
-      "stg_orders_009"
-    ],
-    "examples": [
-      "daily units by country for all last year",
-      "daily units by country for new last year",
-      "daily units by country for returning last year",
-      "daily units by country for vip last year",
-      "daily units by country for returning last year"
-    ],
-    "gap_types": [
-      "access_denied",
-      "grain_or_type_mismatch",
-      "joinability_not_defined",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000109",
-      "q_000246",
-      "q_000489",
-      "q_000711",
-      "q_000380",
-      "q_000299",
-      "q_000033",
-      "q_000118",
-      "q_000763",
-      "q_000750",
-      "q_000425",
-      "q_000538",
-      "q_000251",
-      "q_000179",
-      "q_000795",
-      "q_000003",
-      "q_000047",
-      "q_000410",
-      "q_000782"
-    ]
-  },
-  "c_0010": {
-    "datasets": [
-      "stg_customers_010",
-      "stg_orders_000",
-      "stg_orders_004",
-      "stg_orders_005"
-    ],
-    "examples": [
-      "daily orders by category for promo last quarter",
-      "daily orders by category for vip last quarter",
-      "daily orders by category for all last quarter",
-      "daily orders by category for all last quarter",
-      "daily orders by category for returning last quarter"
-    ],
-    "gap_types": [
-      "freshness_breach",
-      "grain_or_type_mismatch",
-      "joinability_not_defined",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000419",
-      "q_000245",
-      "q_000582",
-      "q_000351",
-      "q_000374",
-      "q_000372",
-      "q_000673",
-      "q_000779",
-      "q_000524",
-      "q_000540",
-      "q_000063",
-      "q_000111",
-      "q_000383",
-      "q_000379",
-      "q_000406",
-      "q_000006",
-      "q_000253",
-      "q_000683",
-      "q_000407",
-      "q_000067",
-      "q_000304",
-      "q_000024",
-      "q_000753",
-      "q_000648",
-      "q_000123",
-      "q_000094",
-      "q_000397"
-    ]
-  },
-  "c_0011": {
-    "datasets": [
-      "mart_products_000",
-      "stg_customers_017",
-      "stg_orders_008"
-    ],
-    "examples": [
-      "daily units by channel for vip last year",
-      "daily units by channel for all last year",
-      "daily units by channel for vip last 30 days",
-      "daily units by channel for promo last 30 days",
-      "daily units by channel for new last 30 days"
-    ],
-    "gap_types": [
-      "grain_or_type_mismatch",
-      "joinability_not_defined",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000577",
-      "q_000429",
-      "q_000180",
-      "q_000707",
-      "q_000281",
-      "q_000335",
-      "q_000776",
-      "q_000549",
-      "q_000690",
-      "q_000314",
-      "q_000665",
-      "q_000316",
-      "q_000727",
-      "q_000537",
-      "q_000614",
-      "q_000194"
-    ]
-  },
-  "c_0012": {
-    "datasets": [
-      "stg_marketing_014",
-      "stg_orders_008"
-    ],
-    "examples": [
-      "daily revenue by country for all last year",
-      "daily revenue by country for promo last year",
-      "daily revenue by country for promo last year",
-      "daily revenue by country for new last year",
-      "daily revenue by country for promo last quarter"
-    ],
-    "gap_types": [
-      "freshness_breach",
-      "grain_or_type_mismatch",
-      "joinability_not_defined",
-      "missing_dataset_or_column",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000168",
-      "q_000645",
-      "q_000764",
-      "q_000681",
-      "q_000010",
-      "q_000798",
-      "q_000482",
-      "q_000417",
-      "q_000700"
-    ]
-  },
-  "c_0013": {
-    "datasets": [],
-    "examples": [
-      "Data issue on orders mart: Requesting access to marketing datasets.",
-      "Data issue on orders mart: Seeing a mismatch vs finance reports.",
-      "Data issue on orders mart: Which column is the join key?",
-      "Data issue on orders mart: Which column is the join key?",
-      "Data issue on orders mart: Requesting access to marketing datasets."
-    ],
-    "gap_types": [],
-    "ids": [
-      "e_0047",
-      "e_0028",
-      "e_0030",
-      "e_0019",
-      "e_0068",
-      "e_0057"
-    ]
-  },
-  "c_0014": {
-    "datasets": [
-      "mart_marketing_003",
-      "mart_orders_004",
-      "stg_orders_012",
-      "stg_products_007"
-    ],
-    "examples": [
-      "daily revenue by sku for promo last year",
-      "daily revenue by sku for vip last quarter",
-      "daily revenue by sku for vip last quarter",
-      "daily revenue by sku for promo last quarter",
-      "daily revenue by sku for promo last quarter"
-    ],
-    "gap_types": [
-      "freshness_breach",
-      "grain_or_type_mismatch",
-      "joinability_not_defined",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000491",
-      "q_000073",
-      "q_000209",
-      "q_000364",
-      "q_000329",
-      "q_000122",
-      "q_000696",
-      "q_000091",
-      "q_000742",
-      "q_000436",
-      "q_000318",
-      "q_000512",
-      "q_000072",
-      "q_000479",
-      "q_000086"
-    ]
-  },
-  "c_0015": {
-    "datasets": [
-      "stg_orders_008"
-    ],
-    "examples": [
-      "daily revenue by country for returning last 7 days",
-      "daily revenue by country for all last 7 days",
-      "daily revenue by country for returning last 7 days",
-      "daily revenue by country for all last 7 days",
-      "daily revenue by country for new last 7 days"
-    ],
-    "gap_types": [
-      "freshness_breach",
-      "grain_or_type_mismatch",
-      "joinability_not_defined",
-      "missing_dataset_or_column",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000738",
-      "q_000443",
-      "q_000231",
-      "q_000770",
-      "q_000553",
-      "q_000124",
-      "q_000375",
-      "q_000477",
-      "q_000279",
-      "q_000719",
-      "q_000186",
-      "q_000401",
-      "q_000341",
-      "q_000330",
-      "q_000541",
-      "q_000145",
-      "q_000494",
-      "q_000108"
-    ]
-  },
-  "c_0016": {
-    "datasets": [
-      "mart_customers_001",
-      "mart_customers_009",
-      "mart_orders_002",
-      "mart_orders_005",
-      "stg_customers_006",
-      "stg_customers_015",
-      "stg_customers_017",
-      "stg_orders_000"
-    ],
-    "examples": [
-      "daily customers by segment for returning last quarter",
-      "daily customers by segment for returning last quarter",
-      "daily customers by segment for new last quarter",
-      "daily customers by segment for all last quarter",
-      "daily customers by segment for vip last quarter"
-    ],
-    "gap_types": [
-      "access_denied",
-      "freshness_breach",
-      "grain_or_type_mismatch",
-      "joinability_not_defined",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000433",
-      "q_000104",
-      "q_000628",
-      "q_000502",
-      "q_000602",
-      "q_000728",
-      "q_000564",
-      "q_000182",
-      "q_000144",
-      "q_000675",
-      "q_000585",
-      "q_000273",
-      "q_000567",
-      "q_000284",
-      "q_000213",
-      "q_000423",
-      "q_000625",
-      "q_000066",
-      "q_000276",
-      "q_000062",
-      "q_000002",
-      "q_000280",
-      "q_000294",
-      "q_000473",
-      "q_000456",
-      "q_000352",
-      "q_000034",
-      "q_000448",
-      "q_000018",
-      "q_000678",
-      "q_000290",
-      "q_000223",
-      "q_000174",
-      "q_000511",
-      "q_000751",
-      "q_000647",
-      "q_000720",
-      "q_000520",
-      "q_000626",
-      "q_000618",
-      "q_000099",
-      "q_000485"
-    ]
-  },
-  "c_0017": {
-    "datasets": [],
-    "examples": [
-      "daily revenue by country for vip last 30 days"
-    ],
-    "gap_types": [
-      "missing_dataset_or_column"
-    ],
-    "ids": [
-      "q_000484"
-    ]
-  },
-  "c_0018": {
-    "datasets": [
-      "mart_customers_001",
-      "mart_orders_006",
-      "stg_customers_001",
-      "stg_orders_005",
-      "stg_orders_008",
-      "stg_orders_009"
-    ],
-    "examples": [
-      "daily units by device for returning last 30 days",
-      "daily units by device for new last quarter",
-      "daily units by device for returning last quarter",
-      "daily units by device for vip last quarter",
-      "daily units by device for returning last quarter"
-    ],
-    "gap_types": [
-      "freshness_breach",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000430",
-      "q_000269",
-      "q_000305",
-      "q_000608",
-      "q_000017",
-      "q_000037",
-      "q_000731",
-      "q_000499",
-      "q_000465",
-      "q_000535",
-      "q_000717",
-      "q_000787",
-      "q_000204",
-      "q_000551",
-      "q_000730"
-    ]
-  },
-  "c_0019": {
-    "datasets": [],
-    "examples": [
-      "daily visits by state for promo last quarter",
-      "daily visits by state for returning last quarter",
-      "daily visits by state for vip last quarter",
-      "daily visits by state for returning last quarter",
-      "daily visits by state for all last quarter"
-    ],
-    "gap_types": [
-      "grain_or_type_mismatch",
-      "joinability_not_defined",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000319",
-      "q_000418",
-      "q_000785",
-      "q_000376",
-      "q_000089",
-      "q_000192",
-      "q_000308",
-      "q_000085",
-      "q_000389",
-      "q_000342",
-      "q_000172",
-      "q_000256",
-      "q_000672",
-      "q_000756",
-      "q_000388",
-      "q_000508"
-    ]
-  },
-  "c_0020": {
-    "datasets": [],
-    "examples": [
-      "Docs missing on customers table",
-      "Docs missing on customers table",
-      "Docs missing on customers table",
-      "Docs missing on customers table",
-      "Docs missing on customers table"
-    ],
-    "gap_types": [],
-    "ids": [
-      "s_0040",
-      "s_0244",
-      "s_0060",
-      "s_0183",
-      "s_0252",
-      "s_0005",
-      "s_0001",
-      "s_0272",
-      "s_0093",
-      "s_0163",
-      "s_0115",
-      "s_0207"
-    ]
-  },
-  "c_0021": {
-    "datasets": [
-      "mart_customers_001",
-      "mart_marketing_003",
-      "mart_marketing_007",
-      "mart_marketing_008",
-      "mart_orders_002",
-      "mart_orders_004",
-      "stg_orders_004",
-      "stg_orders_005",
-      "stg_orders_008",
-      "stg_orders_012",
-      "stg_products_013",
-      "stg_products_019"
-    ],
-    "examples": [
-      "daily customers by device for new last quarter",
-      "daily customers by device for vip last quarter",
-      "daily customers by device for all last quarter",
-      "daily customers by device for all last quarter",
-      "daily visits by device for new last quarter"
-    ],
-    "gap_types": [
-      "freshness_breach",
-      "grain_or_type_mismatch",
-      "joinability_not_defined",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000358",
-      "q_000027",
-      "q_000265",
-      "q_000691",
-      "q_000312",
-      "q_000550",
-      "q_000584",
-      "q_000789",
-      "q_000306",
-      "q_000483",
-      "q_000679",
-      "q_000278",
-      "q_000694",
-      "q_000311",
-      "q_000200",
-      "q_000214",
-      "q_000367",
-      "q_000206",
-      "q_000030",
-      "q_000322",
-      "q_000384",
-      "q_000759"
-    ]
-  },
-  "c_0022": {
-    "datasets": [
-      "mart_orders_002",
-      "stg_customers_006",
-      "stg_customers_010",
-      "stg_customers_011",
-      "stg_orders_005",
-      "stg_orders_012",
-      "stg_orders_018"
-    ],
-    "examples": [
-      "daily customers by sku for all last 30 days",
-      "daily customers by sku for vip last 30 days",
-      "daily customers by sku for vip last 30 days",
-      "daily customers by sku for vip last 30 days",
-      "daily customers by sku for all last 30 days"
-    ],
-    "gap_types": [
-      "access_denied",
-      "freshness_breach",
-      "grain_or_type_mismatch",
-      "joinability_not_defined",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000463",
-      "q_000074",
-      "q_000593",
-      "q_000446",
-      "q_000486",
-      "q_000263",
-      "q_000309",
-      "q_000013",
-      "q_000674",
-      "q_000420",
-      "q_000784",
-      "q_000414",
-      "q_000792",
-      "q_000116",
-      "q_000453",
-      "q_000187",
-      "q_000344",
-      "q_000097",
-      "q_000421",
-      "q_000517",
-      "q_000114",
-      "q_000240",
-      "q_000531",
-      "q_000733",
-      "q_000615",
-      "q_000357",
-      "q_000529",
-      "q_000139",
-      "q_000510",
-      "q_000275",
-      "q_000393",
-      "q_000038",
-      "q_000783",
-      "q_000757",
-      "q_000082",
-      "q_000677",
-      "q_000195",
-      "q_000177",
-      "q_000444",
-      "q_000487",
-      "q_000386",
-      "q_000143",
-      "q_000688",
-      "q_000160",
-      "q_000093",
-      "q_000658",
-      "q_000044"
-    ]
-  },
-  "c_0023": {
-    "datasets": [
-      "mart_orders_002",
-      "mart_orders_005",
-      "stg_orders_005",
-      "stg_products_013"
-    ],
-    "examples": [
-      "daily orders by device for promo last 7 days",
-      "daily orders by device for returning last 7 days",
-      "daily orders by device for promo last 7 days",
-      "daily orders by device for all last 7 days",
-      "daily orders by device for promo last 7 days"
-    ],
-    "gap_types": [
-      "access_denied",
-      "freshness_breach",
-      "grain_or_type_mismatch",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000147",
-      "q_000008",
-      "q_000197",
-      "q_000270",
-      "q_000069",
-      "q_000363",
-      "q_000500",
-      "q_000773",
-      "q_000660",
-      "q_000201",
-      "q_000437",
-      "q_000662",
-      "q_000603",
-      "q_000142",
-      "q_000042",
-      "q_000571",
-      "q_000439"
-    ]
-  },
-  "c_0024": {
-    "datasets": [
-      "mart_customers_009",
-      "mart_orders_005",
-      "mart_products_000",
-      "stg_orders_012",
-      "stg_products_019"
-    ],
-    "examples": [
-      "daily visits by category for returning last 30 days",
-      "daily visits by category for returning last 30 days",
-      "daily visits by category for vip last 30 days",
-      "daily visits by category for promo last 30 days",
-      "daily customers by category for promo last 30 days"
-    ],
-    "gap_types": [
-      "freshness_breach",
-      "grain_or_type_mismatch",
-      "joinability_not_defined",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000332",
-      "q_000464",
-      "q_000141",
-      "q_000283",
-      "q_000737",
-      "q_000216",
-      "q_000790",
-      "q_000476",
-      "q_000298",
-      "q_000272",
-      "q_000164",
-      "q_000653",
-      "q_000012",
-      "q_000075",
-      "q_000219",
-      "q_000600",
-      "q_000317",
-      "q_000523",
-      "q_000032",
-      "q_000041",
-      "q_000119",
-      "q_000617",
-      "q_000071"
-    ]
-  },
-  "c_0025": {
-    "datasets": [
-      "stg_customers_006",
-      "stg_products_003"
-    ],
-    "examples": [
-      "daily revenue by category for all last quarter",
-      "daily revenue by category for returning last quarter",
-      "daily revenue by category for promo last quarter",
-      "daily revenue by category for promo last quarter",
-      "daily revenue by category for returning last quarter"
-    ],
-    "gap_types": [
-      "grain_or_type_mismatch",
-      "joinability_not_defined",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000396",
-      "q_000663",
-      "q_000659",
-      "q_000039",
-      "q_000622",
-      "q_000403",
-      "q_000189",
-      "q_000768",
-      "q_000080",
-      "q_000149",
-      "q_000061",
-      "q_000767",
-      "q_000404",
-      "q_000736",
-      "q_000492",
-      "q_000007",
-      "q_000563"
-    ]
-  },
-  "c_0026": {
-    "datasets": [
-      "mart_customers_009",
-      "mart_marketing_003",
-      "mart_marketing_008",
-      "stg_orders_000",
-      "stg_orders_012"
-    ],
-    "examples": [
-      "daily visits by segment for promo last 7 days",
-      "daily visits by segment for vip last 7 days",
-      "daily visits by segment for new last 7 days",
-      "daily visits by segment for returning last 7 days",
-      "daily visits by segment for new last 7 days"
-    ],
-    "gap_types": [
-      "freshness_breach",
-      "grain_or_type_mismatch",
-      "missing_dataset_or_column",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000208",
-      "q_000686",
-      "q_000704",
-      "q_000450",
-      "q_000734",
-      "q_000554",
-      "q_000623",
-      "q_000347",
-      "q_000513",
-      "q_000107",
-      "q_000514",
-      "q_000026",
-      "q_000518",
-      "q_000670",
-      "q_000555",
-      "q_000610",
-      "q_000090",
-      "q_000345",
-      "q_000148",
-      "q_000238",
-      "q_000765",
-      "q_000137",
-      "q_000369",
-      "q_000777",
-      "q_000651"
-    ]
-  },
-  "c_0027": {
-    "datasets": [
-      "mart_marketing_003",
-      "mart_products_000",
-      "stg_customers_011",
-      "stg_orders_002",
-      "stg_orders_009",
-      "stg_products_003"
-    ],
-    "examples": [
-      "daily units by state for new last year",
-      "daily units by state for all last year",
-      "daily units by state for new last year",
-      "daily units by state for returning last quarter",
-      "daily units by state for new last quarter"
-    ],
-    "gap_types": [
-      "grain_or_type_mismatch",
-      "joinability_not_defined",
-      "missing_dataset_or_column",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000190",
-      "q_000300",
-      "q_000138",
-      "q_000203",
-      "q_000664",
-      "q_000739",
-      "q_000741",
-      "q_000064",
-      "q_000788",
-      "q_000591",
-      "q_000422",
-      "q_000503"
-    ]
-  },
-  "c_0028": {
-    "datasets": [
-      "stg_orders_000",
-      "stg_orders_018",
-      "stg_products_016"
-    ],
-    "examples": [
-      "daily customers by channel for new last 30 days",
-      "daily customers by channel for all last 30 days",
-      "daily customers by channel for new last year",
-      "daily customers by channel for vip last year",
-      "daily customers by channel for vip last year"
-    ],
-    "gap_types": [
-      "freshness_breach",
-      "grain_or_type_mismatch",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000474",
-      "q_000196",
-      "q_000470",
-      "q_000797",
-      "q_000568",
-      "q_000207",
-      "q_000313",
-      "q_000682",
-      "q_000392",
-      "q_000587",
-      "q_000791",
-      "q_000167",
-      "q_000796",
-      "q_000415",
-      "q_000320",
-      "q_000402"
-    ]
-  },
-  "c_0029": {
-    "datasets": [
-      "mart_customers_009",
-      "mart_orders_005",
-      "stg_products_003"
-    ],
-    "examples": [
-      "daily orders by sku for all last 7 days",
-      "daily orders by sku for all last 7 days",
-      "daily orders by sku for promo last 7 days",
-      "daily orders by sku for new last 7 days",
-      "daily orders by sku for returning last 7 days"
-    ],
-    "gap_types": [
-      "missing_dataset_or_column",
-      "performance_limit"
-    ],
-    "ids": [
-      "q_000202",
-      "q_000766",
-      "q_000133",
-      "q_000447",
-      "q_000134",
-      "q_000370",
-      "q_000578",
-      "q_000702"
-    ]
-  },
-  "c_0030": {
-    "datasets": [
-      "mart_orders_002",
-      "stg_orders_002",
-      "stg_orders_005",
-      "stg_orders_018"
-    ],
-    "examples": [
-      "daily customers by country for all last 30 days",
-      "daily customers by country for all last 30 days",
-      "daily customers by country for returning last 30 days",
-      "daily customers by country for vip last 30 days",
-      "daily customers by country for all last 30 days"
-    ],
-    "gap_types": [
-      "freshness_breach",
-      "grain_or_type_mismatch",
-      "joinability_not_defined",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000762",
-      "q_000243",
-      "q_000408",
-      "q_000161",
-      "q_000705",
-      "q_000438",
-      "q_000236",
-      "q_000166",
-      "q_000569",
-      "q_000128",
-      "q_000359",
-      "q_000084",
-      "q_000368",
-      "q_000528",
-      "q_000011",
-      "q_000431",
-      "q_000466",
-      "q_000211",
-      "q_000371",
-      "q_000561",
-      "q_000398",
-      "q_000747",
-      "q_000405",
-      "q_000701"
-    ]
-  },
-  "c_0031": {
-    "datasets": [
-      "stg_customers_010",
-      "stg_orders_008",
-      "stg_orders_012"
-    ],
-    "examples": [
-      "daily revenue by state for promo last year",
-      "daily revenue by state for vip last year",
-      "daily revenue by state for returning last year",
-      "daily revenue by state for new last year",
-      "daily revenue by state for returning last year"
-    ],
-    "gap_types": [
-      "freshness_breach",
-      "joinability_not_defined",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000385",
-      "q_000324",
-      "q_000432",
-      "q_000121",
-      "q_000655",
-      "q_000488",
-      "q_000260",
-      "q_000136",
-      "q_000748",
-      "q_000267",
-      "q_000020",
-      "q_000457",
-      "q_000744"
-    ]
-  },
-  "c_0032": {
-    "datasets": [
-      "mart_customers_001",
-      "mart_orders_002",
-      "mart_orders_004",
-      "mart_orders_005",
-      "stg_customers_001",
-      "stg_customers_006",
-      "stg_customers_011",
-      "stg_products_003",
-      "stg_products_013",
-      "stg_products_019"
-    ],
-    "examples": [
-      "daily units by segment for all last 30 days",
-      "daily units by segment for returning last 30 days",
-      "daily units by segment for new last 30 days",
-      "daily units by segment for new last 30 days",
-      "daily units by segment for new last 30 days"
-    ],
-    "gap_types": [
-      "access_denied",
-      "freshness_breach",
-      "grain_or_type_mismatch",
-      "joinability_not_defined",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000045",
-      "q_000413",
-      "q_000338",
-      "q_000310",
-      "q_000435",
-      "q_000743",
-      "q_000362",
-      "q_000098",
-      "q_000315",
-      "q_000668",
-      "q_000458",
-      "q_000227",
-      "q_000680",
-      "q_000507",
-      "q_000693",
-      "q_000205",
-      "q_000710",
-      "q_000709",
-      "q_000562",
-      "q_000400",
-      "q_000255",
-      "q_000772",
-      "q_000268",
-      "q_000695",
-      "q_000399",
-      "q_000146",
-      "q_000048",
-      "q_000657",
-      "q_000115",
-      "q_000547",
-      "q_000301"
-    ]
-  },
-  "c_0033": {
-    "datasets": [
-      "mart_products_000",
-      "stg_customers_010",
-      "stg_orders_009",
-      "stg_orders_012",
-      "stg_products_016"
-    ],
-    "examples": [
-      "daily orders by segment for all last 7 days",
-      "daily orders by segment for promo last 7 days",
-      "daily orders by segment for promo last 30 days",
-      "daily orders by segment for promo last 30 days",
-      "daily orders by segment for promo last 30 days"
-    ],
-    "gap_types": [
-      "access_denied",
-      "missing_dataset_or_column",
-      "performance_limit"
-    ],
-    "ids": [
-      "q_000348",
-      "q_000646",
-      "q_000726",
-      "q_000102",
-      "q_000604",
-      "q_000424",
-      "q_000478",
-      "q_000286",
-      "q_000721",
-      "q_000449",
-      "q_000427",
-      "q_000088",
-      "q_000613",
-      "q_000244",
-      "q_000212",
-      "q_000536",
-      "q_000242"
-    ]
-  },
-  "c_0034": {
-    "datasets": [
-      "stg_customers_001",
-      "stg_orders_004",
-      "stg_orders_008"
-    ],
-    "examples": [
-      "daily orders by channel for promo last quarter",
-      "daily orders by channel for returning last quarter",
-      "daily orders by channel for all last quarter",
-      "daily orders by channel for new last quarter",
-      "daily orders by channel for returning last quarter"
-    ],
-    "gap_types": [
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000035",
-      "q_000641",
-      "q_000793",
-      "q_000627",
-      "q_000274",
-      "q_000049",
-      "q_000570"
-    ]
-  },
-  "c_0035": {
-    "datasets": [
-      "mart_orders_005",
-      "stg_products_019"
-    ],
-    "examples": [
-      "daily revenue by channel for returning last 7 days",
-      "daily revenue by channel for new last 7 days",
-      "daily revenue by channel for all last 7 days",
-      "daily revenue by channel for returning last 7 days",
-      "daily revenue by channel for all last 7 days"
-    ],
-    "gap_types": [
-      "access_denied",
-      "freshness_breach",
-      "grain_or_type_mismatch",
-      "joinability_not_defined",
-      "missing_dataset_or_column",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000771",
-      "q_000409",
-      "q_000025",
-      "q_000162",
-      "q_000325",
-      "q_000257",
-      "q_000052",
-      "q_000634",
-      "q_000076",
-      "q_000165",
-      "q_000381",
-      "q_000156",
-      "q_000171",
-      "q_000261",
-      "q_000103",
-      "q_000574",
-      "q_000526",
-      "q_000360",
-      "q_000087"
-    ]
-  },
-  "c_0036": {
-    "datasets": [
-      "mart_products_000",
-      "stg_customers_011"
-    ],
-    "examples": [
-      "daily visits by segment for vip last year",
-      "daily visits by channel for vip last year",
-      "daily units by segment for vip last year"
-    ],
-    "gap_types": [
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000583",
-      "q_000630",
-      "q_000046"
-    ]
-  },
-  "c_0037": {
-    "datasets": [
-      "stg_orders_002",
-      "stg_orders_004",
-      "stg_products_007"
-    ],
-    "examples": [
-      "daily visits by country for vip last year",
-      "daily visits by country for new last year",
-      "daily visits by country for returning last year",
-      "daily visits by country for all last year",
-      "daily visits by country for all last year"
-    ],
-    "gap_types": [
-      "access_denied",
-      "freshness_breach",
-      "grain_or_type_mismatch",
-      "joinability_not_defined",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000754",
-      "q_000745",
-      "q_000005",
-      "q_000594",
-      "q_000293",
-      "q_000572",
-      "q_000130",
-      "q_000250",
-      "q_000158",
-      "q_000534",
-      "q_000455",
-      "q_000022",
-      "q_000078",
-      "q_000365",
-      "q_000760",
-      "q_000218",
-      "q_000780",
-      "q_000328"
-    ]
-  },
-  "c_0038": {
-    "datasets": [
-      "mart_marketing_003",
-      "stg_customers_015",
-      "stg_marketing_014",
-      "stg_orders_002",
-      "stg_orders_008",
-      "stg_products_016"
-    ],
-    "examples": [
-      "daily visits by channel for vip last quarter",
-      "daily visits by channel for vip last quarter",
-      "daily visits by channel for promo last quarter",
-      "daily visits by channel for all last quarter",
-      "daily visits by channel for returning last quarter"
-    ],
-    "gap_types": [
-      "freshness_breach",
-      "grain_or_type_mismatch",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000262",
-      "q_000323",
-      "q_000229",
-      "q_000337",
-      "q_000434",
-      "q_000083",
-      "q_000266",
-      "q_000505",
-      "q_000175",
-      "q_000459",
-      "q_000001",
-      "q_000539",
-      "q_000199",
-      "q_000271"
-    ]
-  },
-  "c_0039": {
-    "datasets": [
-      "mart_customers_009",
-      "stg_customers_015",
-      "stg_orders_012",
-      "stg_products_003",
-      "stg_products_007",
-      "stg_products_019"
-    ],
-    "examples": [
-      "daily visits by sku for promo last year",
-      "daily visits by sku for all last year",
-      "daily visits by sku for vip last year",
-      "daily visits by sku for new last 7 days",
-      "daily visits by sku for all last 7 days"
-    ],
-    "gap_types": [
-      "access_denied",
-      "freshness_breach",
-      "grain_or_type_mismatch",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000014",
-      "q_000661",
-      "q_000631",
-      "q_000724",
-      "q_000154",
-      "q_000639",
-      "q_000029",
-      "q_000173",
-      "q_000666",
-      "q_000155",
-      "q_000302",
-      "q_000786",
-      "q_000475",
-      "q_000428",
-      "q_000326",
-      "q_000021",
-      "q_000769",
-      "q_000692",
-      "q_000542",
-      "q_000222",
-      "q_000636"
-    ]
-  },
-  "c_0040": {
-    "datasets": [
-      "stg_marketing_014",
-      "stg_orders_018"
-    ],
-    "examples": [
-      "daily revenue by segment for new last year",
-      "daily revenue by segment for vip last year",
-      "daily revenue by segment for vip last year",
-      "daily revenue by segment for vip last 30 days",
-      "daily revenue by segment for returning last 30 days"
-    ],
-    "gap_types": [
-      "grain_or_type_mismatch",
-      "joinability_not_defined",
-      "missing_dataset_or_column",
-      "performance_limit"
-    ],
-    "ids": [
-      "q_000198",
-      "q_000515",
-      "q_000395",
-      "q_000095",
-      "q_000616",
-      "q_000191",
-      "q_000259",
-      "q_000135"
-    ]
-  },
-  "c_0041": {
-    "datasets": [
-      "mart_marketing_007",
-      "mart_orders_005"
-    ],
-    "examples": [
-      "daily orders by country for all last 30 days",
-      "daily orders by country for promo last 7 days",
-      "daily orders by country for new last 7 days",
-      "daily orders by country for new last 7 days"
-    ],
-    "gap_types": [
-      "missing_dataset_or_column"
-    ],
-    "ids": [
-      "q_000361",
-      "q_000533",
-      "q_000065",
-      "q_000193"
-    ]
-  },
-  "c_0042": {
-    "datasets": [
-      "mart_orders_006",
-      "stg_customers_015"
-    ],
-    "examples": [
-      "daily customers by category for new last 7 days",
-      "daily customers by category for all last year",
-      "daily customers by category for new last year",
-      "daily customers by category for returning last 7 days",
-      "daily customers by category for vip last 7 days"
-    ],
-    "gap_types": [
-      "freshness_breach",
-      "grain_or_type_mismatch",
-      "joinability_not_defined",
-      "performance_limit"
-    ],
-    "ids": [
-      "q_000532",
-      "q_000183",
-      "q_000015",
-      "q_000339",
-      "q_000060",
-      "q_000605",
-      "q_000667"
-    ]
-  },
-  "c_0043": {
-    "datasets": [
-      "stg_orders_008",
-      "stg_orders_012",
-      "stg_products_019"
-    ],
-    "examples": [
-      "daily visits by device for vip last 30 days",
-      "daily visits by device for new last 30 days",
-      "daily visits by device for vip last 30 days",
-      "daily visits by device for vip last 30 days",
-      "daily visits by device for returning last 30 days"
-    ],
-    "gap_types": [
-      "access_denied",
-      "freshness_breach",
-      "joinability_not_defined",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000252",
-      "q_000150",
-      "q_000624",
-      "q_000169",
-      "q_000629",
-      "q_000440",
-      "q_000612",
-      "q_000652",
-      "q_000228",
-      "q_000746",
-      "q_000596",
-      "q_000349",
-      "q_000131",
-      "q_000327",
-      "q_000521",
-      "q_000471",
-      "q_000712"
-    ]
-  },
-  "c_0044": {
-    "datasets": [
-      "mart_marketing_007",
-      "stg_products_013"
-    ],
-    "examples": [
-      "daily visits by state for promo last 7 days",
-      "daily visits by state for new last 7 days",
-      "daily visits by state for vip last 7 days",
-      "daily visits by state for vip last 7 days",
-      "daily visits by state for promo last 7 days"
-    ],
-    "gap_types": [
-      "grain_or_type_mismatch",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000715",
-      "q_000522",
-      "q_000620",
-      "q_000575",
-      "q_000557",
-      "q_000264",
-      "q_000595"
-    ]
-  },
-  "c_0045": {
-    "datasets": [
-      "mart_customers_009",
-      "stg_customers_001"
-    ],
-    "examples": [
-      "daily units by channel for new last 7 days",
-      "daily units by channel for all last 7 days",
-      "daily units by channel for returning last 7 days",
-      "daily units by channel for new last 7 days",
-      "daily units by category for promo last 7 days"
-    ],
-    "gap_types": [
-      "freshness_breach",
-      "missing_dataset_or_column",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000454",
-      "q_000235",
-      "q_000307",
-      "q_000297",
-      "q_000126",
-      "q_000157",
-      "q_000050"
-    ]
-  },
-  "c_0046": {
-    "datasets": [
-      "mart_marketing_003",
-      "stg_orders_002",
-      "stg_products_016"
-    ],
-    "examples": [
-      "daily revenue by sku for all last 7 days",
-      "daily revenue by sku for promo last 7 days",
-      "daily revenue by sku for new last 7 days",
-      "daily revenue by sku for new last 7 days",
-      "daily revenue by sku for new last 7 days"
-    ],
-    "gap_types": [
-      "freshness_breach",
-      "grain_or_type_mismatch",
-      "missing_dataset_or_column",
-      "performance_limit"
-    ],
-    "ids": [
-      "q_000607",
-      "q_000291",
-      "q_000387",
-      "q_000697",
-      "q_000151",
-      "q_000239",
-      "q_000650",
-      "q_000226",
-      "q_000181",
-      "q_000713"
-    ]
-  },
-  "c_0047": {
-    "datasets": [
-      "mart_orders_006"
-    ],
-    "examples": [
-      "daily units by state for returning last 7 days",
-      "daily units by state for new last 7 days",
-      "daily units by state for new last 7 days",
-      "daily units by state for promo last 7 days",
-      "daily units by state for vip last 7 days"
-    ],
-    "gap_types": [
-      "access_denied",
-      "grain_or_type_mismatch",
-      "missing_dataset_or_column",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000100",
-      "q_000543",
-      "q_000525",
-      "q_000043",
-      "q_000559",
-      "q_000516",
-      "q_000580",
-      "q_000334",
-      "q_000644",
-      "q_000350",
-      "q_000336",
-      "q_000056"
-    ]
-  },
-  "c_0048": {
-    "datasets": [
-      "mart_products_000"
-    ],
-    "examples": [
-      "daily revenue by channel for promo last quarter"
-    ],
-    "gap_types": [],
-    "ids": [
-      "q_000092"
-    ]
-  },
-  "c_0049": {
-    "datasets": [
-      "stg_orders_018"
-    ],
-    "examples": [
-      "daily orders by device for promo last quarter",
-      "daily orders by device for all last quarter",
-      "daily orders by device for new last quarter",
-      "daily orders by device for returning last quarter",
-      "daily orders by device for vip last quarter"
-    ],
-    "gap_types": [
-      "freshness_breach",
-      "joinability_not_defined",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000676",
-      "q_000132",
-      "q_000642",
-      "q_000079",
-      "q_000058",
-      "q_000382",
-      "q_000714",
-      "q_000498"
-    ]
-  },
-  "c_0050": {
-    "datasets": [
-      "mart_customers_009",
-      "stg_marketing_014",
-      "stg_orders_008",
-      "stg_products_016"
-    ],
-    "examples": [
-      "daily units by sku for promo last 7 days",
-      "daily units by sku for vip last 7 days",
-      "daily units by sku for returning last 7 days",
-      "daily units by sku for promo last 7 days",
-      "daily units by sku for vip last 7 days"
-    ],
-    "gap_types": [
-      "freshness_breach",
-      "grain_or_type_mismatch",
-      "joinability_not_defined",
-      "missing_dataset_or_column",
-      "performance_limit",
-      "semantics_unclear"
-    ],
-    "ids": [
-      "q_000706",
-      "q_000159",
-      "q_000601",
-      "q_000519",
-      "q_000794",
-      "q_000654",
-      "q_000649",
-      "q_000800",
-      "q_000495",
-      "q_000490",
-      "q_000560",
-      "q_000729",
-      "q_000112",
-      "q_000597"
-    ]
-  },
-  "c_0051": {
-    "datasets": [
-      "mart_customers_009",
-      "stg_marketing_014",
-      "stg_products_019"
-    ],
-    "examples": [
-      "daily units by country for vip last 7 days",
-      "daily units by category for vip last 30 days",
-      "daily units by country for all last 7 days",
-      "daily units by device for vip last 7 days"
-    ],
-    "gap_types": [
-      "performance_limit"
-    ],
-    "ids": [
-      "q_000070",
-      "q_000249",
-      "q_000735",
-      "q_000611"
-    ]
-  },
-  "c_0052": {
-    "datasets": [
-      "mart_customers_001",
-      "stg_customers_001"
-    ],
-    "examples": [
-      "daily revenue by segment for promo last 30 days",
-      "daily revenue by category for promo last 7 days"
-    ],
-    "gap_types": [],
-    "ids": [
-      "q_000009",
-      "q_000185"
-    ]
-  },
-  "c_0053": {
-    "datasets": [
-      "mart_orders_002",
-      "stg_customers_001",
-      "stg_orders_000",
-      "stg_products_016",
-      "stg_products_019"
-    ],
-    "examples": [
-      "daily customers by state for vip last 30 days",
-      "daily customers by state for all last year",
-      "daily customers by state for all last year",
-      "daily customers by state for vip last year",
-      "daily customers by state for returning last year"
-    ],
-    "gap_types": [
-      "grain_or_type_mismatch",
-      "missing_dataset_or_column",
-      "performance_limit"
-    ],
-    "ids": [
-      "q_000036",
-      "q_000343",
-      "q_000373",
-      "q_000546",
-      "q_000586",
-      "q_000581",
-      "q_000051",
-      "q_000752",
-      "q_000288",
-      "q_000481",
-      "q_000055",
-      "q_000232"
-    ]
-  },
-  "c_0054": {
-    "datasets": [
-      "mart_marketing_008",
-      "stg_customers_017",
-      "stg_orders_009"
-    ],
-    "examples": [
-      "daily units by segment for promo last year",
-      "daily units by segment for promo last year",
-      "daily units by segment for promo last year"
-    ],
-    "gap_types": [],
-    "ids": [
-      "q_000153",
-      "q_000778",
-      "q_000452"
-    ]
-  },
-  "c_0055": {
-    "datasets": [
-      "mart_marketing_008",
-      "stg_orders_009"
-    ],
-    "examples": [
-      "daily orders by state for vip last 7 days",
-      "daily orders by state for vip last 7 days",
-      "daily orders by state for returning last 7 days",
-      "daily orders by state for vip last 7 days",
-      "daily orders by state for vip last 30 days"
+      "what is ctr by category last last week"
     ],
     "gap_types": [
       "freshness_breach"
     ],
     "ids": [
-      "q_000096",
-      "q_000716",
-      "q_000394",
-      "q_000217",
-      "q_000638"
+      "q_000924"
     ]
   },
-  "c_0056": {
-    "datasets": [
-      "mart_orders_002",
-      "stg_products_013"
-    ],
+  "c_0005": {
+    "datasets": [],
     "examples": [
-      "daily orders by state for promo last year",
-      "daily orders by state for promo last year",
-      "daily orders by state for promo last year",
-      "daily orders by state for promo last 30 days"
+      "trend of revenue for paid_plan over yesterday"
     ],
     "gap_types": [
-      "joinability_not_defined",
       "missing_dataset_or_column"
     ],
     "ids": [
-      "q_000509",
-      "q_000081",
-      "q_000685",
-      "q_000321"
+      "q_001186"
     ]
   },
-  "c_0057": {
-    "datasets": [
-      "mart_marketing_003",
-      "mart_marketing_007",
-      "stg_orders_004",
-      "stg_orders_012"
-    ],
+  "c_0006": {
+    "datasets": [],
     "examples": [
-      "daily orders by channel for all last 30 days",
-      "daily orders by channel for returning last 7 days",
-      "daily orders by channel for vip last 30 days",
-      "daily orders by channel for vip last 30 days",
-      "daily orders by channel for promo last 30 days"
+      "trend of ctr for enterprise_only over last week",
+      "daily gross_margin by week for eu_only in the last 90 days",
+      "daily active_users by month for paid_plan in the last week",
+      "trend of ctr for eu_only over last week",
+      "Can someone pull churn by week for last week?"
     ],
     "gap_types": [
+      "access_denied",
       "freshness_breach",
-      "missing_dataset_or_column",
-      "performance_limit"
+      "missing_dataset_or_column"
     ],
     "ids": [
+      "q_000770",
+      "q_001054",
       "q_000472",
-      "q_000548",
-      "q_000689",
-      "q_000598",
-      "q_000129",
-      "q_000592",
-      "q_000703",
-      "q_000643",
-      "q_000233",
-      "q_000289",
-      "q_000566"
+      "q_000294",
+      "s_0576",
+      "s_0092"
     ]
   },
-  "c_0058": {
+  "c_0007": {
     "datasets": [
-      "mart_products_000",
-      "stg_customers_015",
-      "stg_orders_008",
-      "stg_orders_012",
-      "stg_products_003"
+      "stg_products_004"
     ],
     "examples": [
-      "daily orders by state for returning last year",
-      "daily orders by country for returning last year",
-      "daily orders by state for new last year",
-      "daily orders by country for returning last year",
-      "daily orders by state for returning last 30 days"
+      "what is bugs by sku last last week"
     ],
     "gap_types": [],
     "ids": [
-      "q_000496",
-      "q_000287",
-      "q_000106",
-      "q_000254",
-      "q_000445"
+      "q_000091"
     ]
   },
-  "c_0059": {
+  "c_0008": {
     "datasets": [
-      "stg_orders_012",
-      "stg_products_003"
+      "stg_marketing_021"
     ],
     "examples": [
-      "daily customers by state for returning last 7 days",
-      "daily customers by state for all last 7 days"
+      "trend of customers for enterprise_only over lsat week"
     ],
     "gap_types": [],
     "ids": [
-      "q_000355",
-      "q_000220"
+      "q_000570"
     ]
   },
-  "c_0060": {
-    "datasets": [
-      "stg_orders_009",
-      "stg_products_016"
-    ],
-    "examples": [
-      "daily customers by country for promo last year",
-      "daily customers by segment for promo last year"
-    ],
-    "gap_types": [],
-    "ids": [
-      "q_000758",
-      "q_000210"
-    ]
-  },
-  "c_0061": {
+  "c_0009": {
     "datasets": [],
     "examples": [
-      "Access request: Can we segment by device and country?",
-      "Access request: Can we segment by device and country?",
-      "Help with join keys: Can we segment by device and country?",
-      "Access request: Can we segment by device and country?",
-      "Help with join keys: Can we segment by device and country?"
+      "Join on sku"
     ],
     "gap_types": [],
     "ids": [
-      "e_0023",
-      "e_0001",
-      "e_0025",
-      "e_0069",
-      "e_0008"
+      "s_0354"
     ]
   },
-  "c_0062": {
+  "c_0010": {
     "datasets": [
-      "stg_products_016"
+      "mart_marketing_004",
+      "mart_marketing_018"
     ],
     "examples": [
-      "daily units by state for returning last quarter"
+      "Check mart_marketing_004",
+      "Check mart_marketing_018"
     ],
     "gap_types": [],
     "ids": [
-      "q_000004"
+      "s_0049",
+      "s_0223"
     ]
   },
-  "c_0063": {
+  "c_0011": {
     "datasets": [],
     "examples": [
-      "daily customers by device for vip last 7 days"
+      "daily cpl by channel for paid_plan in the last week",
+      "daily churn by channel for paid_plan in the last week"
+    ],
+    "gap_types": [
+      "grain_or_type_mismatch",
+      "missing_dataset_or_column"
+    ],
+    "ids": [
+      "q_000078",
+      "q_000890"
+    ]
+  },
+  "c_0012": {
+    "datasets": [
+      "stg_customers_014"
+    ],
+    "examples": [
+      "daily crashes by region for free_plan in the today"
+    ],
+    "gap_types": [],
+    "ids": [
+      "q_001403"
+    ]
+  },
+  "c_0013": {
+    "datasets": [
+      "stg_marketing_043"
+    ],
+    "examples": [
+      "daily cpa by sku for paid_plan in the last 90 days"
+    ],
+    "gap_types": [],
+    "ids": [
+      "q_000001"
+    ]
+  },
+  "c_0014": {
+    "datasets": [
+      "stg_customers_014"
+    ],
+    "examples": [
+      "what is cpl by channel last last week"
+    ],
+    "gap_types": [],
+    "ids": [
+      "q_001259"
+    ]
+  },
+  "c_0015": {
+    "datasets": [],
+    "examples": [
+      "what is crashes by country last today"
     ],
     "gap_types": [
       "missing_dataset_or_column"
     ],
     "ids": [
-      "q_000117"
+      "q_000017"
     ]
   },
-  "c_0064": {
+  "c_0016": {
     "datasets": [
-      "mart_marketing_008",
-      "stg_products_016"
+      "stg_products_005"
     ],
     "examples": [
-      "daily orders by category for promo last 30 days",
-      "daily orders by category for promo last year"
+      "Does stg_products_005 have channel?"
     ],
     "gap_types": [],
     "ids": [
-      "q_000467",
-      "q_000599"
+      "s_0585"
     ]
   },
-  "c_0065": {
-    "datasets": [
-      "mart_customers_001",
-      "mart_customers_009",
-      "stg_products_013"
-    ],
-    "examples": [
-      "daily customers by channel for promo last year",
-      "daily customers by category for promo last year",
-      "daily customers by channel for promo last year"
-    ],
-    "gap_types": [],
-    "ids": [
-      "q_000285",
-      "q_000635",
-      "q_000461"
-    ]
-  },
-  "c_0066": {
-    "datasets": [
-      "stg_orders_005"
-    ],
-    "examples": [
-      "daily visits by channel for returning last 7 days"
-    ],
-    "gap_types": [],
-    "ids": [
-      "q_000609"
-    ]
-  },
-  "c_0067": {
+  "c_0017": {
     "datasets": [],
     "examples": [
-      "Weekly KPI question: Can we segment by device and country?"
-    ],
-    "gap_types": [],
-    "ids": [
-      "e_0066"
-    ]
-  },
-  "c_0068": {
-    "datasets": [
-      "mart_orders_004"
-    ],
-    "examples": [
-      "daily revenue by sku for returning last quarter"
-    ],
-    "gap_types": [],
-    "ids": [
-      "q_000504"
-    ]
-  },
-  "c_0069": {
-    "datasets": [
-      "stg_products_007"
-    ],
-    "examples": [
-      "daily visits by device for promo last quarter"
-    ],
-    "gap_types": [],
-    "ids": [
-      "q_000441"
-    ]
-  },
-  "c_0070": {
-    "datasets": [
-      "mart_marketing_007"
-    ],
-    "examples": [
-      "daily visits by sku for returning last quarter"
-    ],
-    "gap_types": [],
-    "ids": [
-      "q_000761"
-    ]
-  },
-  "c_0071": {
-    "datasets": [],
-    "examples": [
-      "daily orders by state for returning last quarter",
-      "daily orders by state for vip last quarter"
+      "trend of revenue for eu_only over last quarter"
     ],
     "gap_types": [
       "performance_limit"
     ],
     "ids": [
-      "q_000442",
-      "q_000127"
+      "q_000479"
     ]
   },
-  "c_0072": {
-    "datasets": [
-      "stg_orders_000"
-    ],
-    "examples": [
-      "daily units by sku for new last quarter"
-    ],
-    "gap_types": [],
-    "ids": [
-      "q_000295"
-    ]
-  },
-  "c_0073": {
+  "c_0018": {
     "datasets": [],
     "examples": [
-      "daily revenue by category for all last 30 days"
+      "daily orders by channel for free_plan in the last quarter"
     ],
     "gap_types": [
-      "grain_or_type_mismatch"
+      "joinability_not_defined"
     ],
     "ids": [
-      "q_000292"
+      "q_001177"
     ]
   },
-  "c_0074": {
-    "datasets": [
-      "stg_customers_017"
-    ],
-    "examples": [
-      "daily visits by segment for promo last year"
-    ],
-    "gap_types": [],
-    "ids": [
-      "q_000426"
-    ]
-  },
-  "c_0075": {
+  "c_0019": {
     "datasets": [],
     "examples": [
-      "Weekly KPI question: Requesting access to marketing datasets."
+      "what is cpa by category last last quarter"
     ],
-    "gap_types": [],
+    "gap_types": [
+      "missing_dataset_or_column"
+    ],
     "ids": [
-      "e_0012"
+      "q_001462"
     ]
   },
-  "c_0076": {
+  "c_0020": {
     "datasets": [
-      "mart_orders_004",
-      "stg_orders_018"
+      "mart_products_023"
     ],
     "examples": [
-      "daily units by device for vip last quarter",
-      "daily units by device for vip last quarter"
+      "Access to mart_products_023: Is the join key customer_id or user_id?",
+      "Access to mart_products_023: Is the join key customer_id or user_id?",
+      "Access to mart_products_023: Seeing delays on the mart table, is freshness within SLA?",
+      "Access to mart_products_023: Access request for the marketing schema, permission denied errors. (quota exceeded)"
     ],
     "gap_types": [],
     "ids": [
-      "q_000633",
-      "q_000340"
+      "e_0022",
+      "e_0067",
+      "e_0095",
+      "e_0133"
     ]
   },
-  "c_0077": {
+  "c_0021": {
     "datasets": [
-      "stg_orders_009"
+      "stg_marketing_035"
     ],
     "examples": [
-      "daily revenue by device for vip last year"
+      "Check stg_marketing_035"
     ],
     "gap_types": [],
     "ids": [
-      "q_000333"
+      "s_0459"
     ]
   },
-  "c_0078": {
+  "c_0022": {
     "datasets": [
-      "stg_customers_015"
+      "stg_customers_042"
     ],
     "examples": [
-      "daily orders by category for new last year"
+      "Does stg_customers_042 have date?"
     ],
     "gap_types": [],
     "ids": [
-      "q_000215"
+      "s_0483"
     ]
   },
-  "c_0079": {
+  "c_0023": {
     "datasets": [
-      "stg_orders_012"
+      "stg_marketing_026"
     ],
     "examples": [
-      "daily orders by segment for vip last year"
+      "Check stg_marketing_026\n```sql\nSELECT crashes, month FROM stg_marketing_026 WHERE dt >= current_date - interval '30 day'\n```"
     ],
     "gap_types": [],
     "ids": [
-      "q_000637"
+      "s_0447"
     ]
   },
-  "c_0080": {
+  "c_0024": {
     "datasets": [
-      "stg_customers_015"
+      "mart_finance_008"
     ],
     "examples": [
-      "daily revenue by sku for vip last quarter"
+      "Check mart_finance_008\n```sql\nSELECT count(*) FROM mart_finance_008 WHERE dt >= current_date - interval '7 day'\n```"
     ],
     "gap_types": [],
     "ids": [
-      "q_000775"
+      "s_0183"
+    ]
+  },
+  "c_0025": {
+    "datasets": [],
+    "examples": [
+      "Need revenue by device: Could you share a quick pull by segment for the last month?"
+    ],
+    "gap_types": [],
+    "ids": [
+      "e_0064"
+    ]
+  },
+  "c_0026": {
+    "datasets": [
+      "mart_products_023"
+    ],
+    "examples": [
+      "Access to mart_products_023: Could you share a quick pull by segment for the last month?",
+      "Access to mart_products_023: Could you share a quick pull by segment for the last month?",
+      "Data freshness for mart_products_023: Could you share a quick pull by segment for the last month?"
+    ],
+    "gap_types": [],
+    "ids": [
+      "e_0019",
+      "e_0112",
+      "e_0130"
     ]
   }
 }

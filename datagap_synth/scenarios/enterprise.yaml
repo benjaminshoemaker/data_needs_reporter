@@ -1,0 +1,46 @@
+domains: [orders, customers, marketing, finance, product]
+metrics:
+  orders: [orders, gmv, aov]
+  customers: [active_users, retention, churn]
+  marketing: [cpa, cpl, ctr]
+  finance: [revenue, gross_margin, refunds]
+  product: [feature_adoption, bugs, crashes]
+dimensions: [date, week, month, region, country, device, plan, segment, industry, channel]
+synonyms:
+  gmv: [revenue, sales, topline]
+  active_users: [wau, mau, dau, active]
+  retention: [repeat rate, returning users]
+  refunds: [returns, chargebacks]
+  feature_adoption: [activation, enablement]
+timeframes: [today, yesterday, last week, last month, last quarter, last 90 days]
+filters: [enterprise_only, us_only, eu_only, free_plan, paid_plan]
+nlq_templates:
+  - "daily {metric} by {dimension} for {filter} in the {timeframe}"
+  - "what is {metric} by {dimension} last {timeframe}"
+  - "trend of {metric} for {filter} over {timeframe}"
+slack_templates:
+  opening: [
+    "Does {table} have {column}?",
+    "Can someone pull {metric} by {dimension} for {timeframe}?",
+    "Why is {metric} down for {filter}?"
+  ]
+  replies: [
+    "Check {table}",
+    "Freshness looks off",
+    "Missing {column}",
+    "Join on {key}",
+    "Grant added"
+  ]
+  code_snippets: [
+    "SELECT count(*) FROM {table} WHERE dt >= current_date - interval '7 day'",
+    "SELECT {metric}, {dimension} FROM {table} WHERE dt >= current_date - interval '30 day'"
+  ]
+email_subjects: ["Need {metric} by {dimension}", "Access to {table}", "Data freshness for {dataset}"]
+error_phrases: ["permission denied", "object does not exist", "timeout", "quota exceeded"]
+languages: [{lang: en, pct: 0.9}, {lang: es, pct: 0.05}, {lang: fr, pct: 0.05}]
+noise:
+  typos_pct: 0.07
+  abbreviations_pct: 0.12
+  vague_time_pct: 0.10
+  oos_term_pct: 0.12
+roles: [Exec, Ops, Eng, Product, Sales]

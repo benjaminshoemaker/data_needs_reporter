@@ -1,106 +1,46 @@
-datagap_synth
-=================
+# dnr-synth
 
-Minimal Python 3.11 utility to generate synthetic “telemetry packs” for data-question workflows, used to develop and validate data-gap detection/reporting tools.
+`dnr-synth` is a Typer-based CLI that fabricates messy-yet-controlled analytics datasets, dbt skeletons, and evaluation artifacts for three domains: fintech, ecommerce, and SaaS. It helps stress-test a Data Needs Reporter by delivering deterministic generators, corruptors, and health reports.
 
-Features
-- CLI: `datagap-synth` with `init`, `gen`, `validate`, `list`.
-- Generates packs with catalog, nl queries, Slack, and Email events.
-- Deterministic when `--seed` is provided (including a deterministic clock).
-- JSON Schema validation + cross-file checks.
-- Standard library + PyYAML + jsonschema only.
+## Features
+- Deterministic synthetic frames powered by NumPy, pandas, pyarrow, and Faker.
+- Configurable corruptors for key presence, joinability, lateness, duplicates, null spikes, and schema drift.
+- Turn-key dbt starter projects plus health metrics (JSON + Markdown) for quick validation.
+- Lightweight sampling of NL queries and Slack threads for UX demos.
 
-Quickstart
-1) Install in editable mode
+## Quickstart
+```bash
+poetry install
 
-    pip install -e .
+# 1) Scaffold domain assets
+poetry run dnr-synth init fintech
 
-2) Initialize config and schemas in your working directory
+# 2) Generate messy parquet outputs
+poetry run dnr-synth generate --config domains/fintech/config.yaml --seed 4242
 
-    datagap-synth init
+# 3) Evaluate data health and review artifacts
+poetry run dnr-synth evaluate --domain fintech
+```
 
-3) Generate a pack
+## Commands
+| Command | Description |
+| --- | --- |
+| `dnr-synth init <domain>` | Scaffold `domains/<domain>/config.yaml`, `dbt_<domain>/`, and `artifacts/<domain>/`. |
+| `dnr-synth generate --config <yaml> [--out <dir>] [--seed <int>] [--dry-run]` | Produce clean data, apply corruptors, and write Parquet partitioned by `ds`. |
+| `dnr-synth evaluate --domain <domain> [--data <dir>] [--out <dir>]` | Compute health metrics (joinability, key nulls, lag, duplicates, null spikes). |
+| `dnr-synth sample --domain <domain> --data <dir> --dbt <dir> [--out <dir>] [--seed <int>]` | Emit grounded `nl_queries.json` and `slack_threads.json` derived from the generated datasets. |
+| `dnr-synth preview <folder> [--limit N]` | Pretty-print up to N rows per dataset plus sample NL queries and Slack threads. |
+| `dnr-synth export --to postgres --dsn <url>` | Placeholder stub for future warehouse exports. |
 
-    datagap-synth gen --config config.yaml --out packs/vYYYY-MM-DD-a
+## Configuration
+- Configs live under `domains/<domain>/config.yaml` (Pydantic-validated, loaded via ruamel.yaml).
+- Randomness uses `numpy.random.Generator` with `PCG64`; omit `--seed` to default to `7`.
+- Parquet outputs land under `data/<domain>` by default (`parquet://` URIs resolve to local paths).
 
-4) Validate a pack
+## Development
+- Python 3.11+, managed via Poetry (`poetry install`, `poetry run pytest`).
+- Templates ship under `templates/` and are copied with token substitution on `init`.
+- Tests cover corruptor probabilities and evaluator metrics to keep regressions in check.
 
-    datagap-synth validate --pack packs/vYYYY-MM-DD-a
-
-5) List packs
-
-    datagap-synth list --root packs
-
-Data Gaps Report (LLM-assisted)
-- CLI: `datagap-report`
-- Defaults optimized for cost: LLM `gpt-4o-mini`, embeddings `text-embedding-3-small`.
-- Override with `--model gpt-5` or `--embed text-embedding-3-large` as needed.
-- Uses OpenAI Responses API with Structured Outputs (JSON Schema) and optional embeddings to improve intent extraction, gap classification, clustering, and summaries. Caching keeps costs stable.
-
-Commands
-- Generate from a pack
-
-    datagap-report gen --pack packs/pack1 --out report_out \\
-      --llm on --model gpt-4o-mini --embed text-embedding-3-small \\
-      --api-base https://api.openai.com
-
-- Validate outputs
-
-    datagap-report validate --out report_out
-
-- Print a sample of backlog items
-
-    datagap-report print-sample --out report_out
-
-Environment
-- Requires Python 3.11+.
-- Set `LLM_API_KEY` for API auth. Override base with `--api-base`.
-
-Models
-- Default LLM: `gpt-4o-mini` (cheaper; override with `--model gpt-5`).
-- Embeddings: `text-embedding-3-small` (override with `--embed text-embedding-3-large`).
-- Structured Outputs: enforced via JSON Schema with `strict: true` using the Responses API.
-  Cost summary written to `report_out/artifacts/cost.json` with token estimates and cache hits.
-
-Docs
-- OpenAI Models: https://platform.openai.com/docs/models
-- Structured Outputs (Responses API): https://platform.openai.com/docs/guides/structured-outputs
-
-Generated Data Policy
-- Committed:
-  - Code, configs, and small fixtures under `fixtures/`
-  - One example report under `docs/examples/`
-- Not committed:
-  - Bulk generated data under `packs/`, `out/`, and `artifacts/`
-  - Per-run `report*.md` and `report*.html`, and PDF exports
-- How to regenerate:
-  - `make fixtures` generates a golden pack (`fixtures/packs/golden`) and a non-LLM example report (`docs/examples/golden`).
-  - CI also builds a pack and report on every push and uploads `out/ci` as an artifact.
-
-Pre-commit
-- Install pre-commit once: `pip install pre-commit && pre-commit install`
-- Hooks enforce:
-  - No files >10MB added
-  - No commits of generated dirs (`packs/`, `out/`, `artifacts/`)
-
-Determinism and Seeds
-- By default generation is non-deterministic.
-- Pass `--seed <int>` to make outputs byte-identical across runs. When a seed is provided, the generator derives a deterministic “now” timestamp from the seed so all timestamps and IDs are stable.
-
-Outputs
-Packs are written as:
-
-    packs/<pack_id>/
-      manifest.json
-      hashes.json
-      catalog/
-        datasets.json
-        freshness.csv
-        lineage.json
-      nl_queries.jsonl
-      slack.jsonl
-      email.jsonl
-
-Schemas
-- `datagap-synth init` writes `schemas/` with JSON Schemas and a starter `config.yaml`.
-- `validate` uses `schemas/` in CWD if present, or falls back to embedded copies.
+## License
+MIT

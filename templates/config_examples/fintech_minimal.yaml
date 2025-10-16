@@ -1,0 +1,27 @@
+# minimal_messy v1
+domain: fintech
+size: small
+clock: { tz: UTC, start: 2025-07-01, days: 60 }
+keys: { customers: 50000, merchants: 1200 }
+sources:
+  app_db:  { ingest_lag_min: { mean: 12, sd: 6 } }
+  events:  { ingest_lag_min: { mean: 3, sd: 2 }, duplicate_rate: 0.008 }
+null_spikes:
+  - { table: fct_transaction, field: device_type, p: 0.5, when: "2025-08-10/2025-08-12", where: "platform = 'web'" }
+schema_drift:
+  - { at: "2025-08-01", table: fct_transaction, rename: { total_amount: gross_amount } }
+  - { at: "2025-08-08", table: dim_customer, add: { customer_tier: "string" } }
+key_presence:
+  fct_transaction:
+    customer_id: { base_p: 0.992, web_p: 0.98, ios_p: 0.995 }
+    session_id:  { base_p: 0.91 }
+    device_id:   { base_p: 0.94 }
+  evt_checkout_step:
+    customer_id: { base_p: 0.82, anon_p: 0.55 }
+    session_id:  { base_p: 0.88 }
+joinability_matrix:
+  fct_transaction: { "dim_customer": 0.985, "dim_session": 0.88, "dim_device": 0.92 }
+  evt_checkout_step: { "dim_customer": 0.78, "dim_session": 0.86 }
+outputs:
+  warehouse: "parquet://./data/fintech"
+  dbt_project_dir: "./dbt_fintech"

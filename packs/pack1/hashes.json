@@ -1,9 +1,0 @@
-{
-  "catalog/datasets.json": "326d9b528c63554d5563ef5ad969d9dafc2e48a570b7e72101f498cf08c21039",
-  "catalog/freshness.csv": "22cbaf3d307168037ab098cb7f1c8f4e6f6830224b1caa6c744b0bb83d90fe5a",
-  "catalog/lineage.json": "5778378f56b0b1cb8429c980f22b998df235e83fd28a678adeb3b1fcb55dacba",
-  "email.jsonl": "444380dfe0d4afcd944ed9e76101da9d294c7eb77681691a53754fed0c89e94f",
-  "manifest.json": "80183ac2d0e4f4bc48f4443668ff9afe343f2d51af8ee4a676b76cba99e0c36b",
-  "nl_queries.jsonl": "b84daabf9f955ff7c36a5a1a9381477c6b2b167cfe5c41f8961ef75fc9deab40",
-  "slack.jsonl": "57df01b49c9a4c04fef5bfd03037f4358c8583f1dacfbe9e6c1087540a32301f"
-}

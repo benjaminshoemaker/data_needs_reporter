@@ -1,9 +1,8 @@
 .PHONY: fixtures
 
 fixtures:
-	@mkdir -p fixtures/packs docs/examples
-	@echo "Generating golden fixture pack (seed=424242)..."
-	datagap-synth gen --config config.yaml --out fixtures/packs/golden --seed 424242
-	@echo "Generating example report (LLM off)..."
-	datagap-report gen --pack fixtures/packs/golden --out docs/examples/golden --llm off
-	@echo "Done. Fixtures in fixtures/packs/golden and docs/examples/golden"
+	poetry run dnr-synth init fintech
+	poetry run dnr-synth generate --config domains/fintech/config.yaml --seed 424242 --out data/fintech_golden
+	poetry run dnr-synth evaluate --domain fintech --data data/fintech_golden --out artifacts/fintech_golden
+	poetry run dnr-synth sample --domain fintech --out artifacts/fintech_golden --seed 424242
+	@echo "Golden dataset in data/fintech_golden; artifacts in artifacts/fintech_golden"

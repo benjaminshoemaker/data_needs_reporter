@@ -2,6 +2,9 @@
 packs/**
 out/**
 artifacts/**
+data/**
+dbt_*/
+domains/
 report*.md
 report*.html
 *.pdf

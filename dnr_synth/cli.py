@@ -7,11 +7,13 @@ import shutil
 from pathlib import Path
 from typing import Optional
 
+import logging
 import pandas as pd
 import typer
 from rich import box
 from rich.console import Console
 from rich.panel import Panel
+from rich.markdown import Markdown
 from rich.table import Table
 
 from . import __version__
@@ -30,10 +32,12 @@ from .sample import (
     validate_threads,
     write_json,
 )
+from .analysis.gaps_prompt import build_prompt, run_llm, split_outputs
 
 console = Console()
 
 app = typer.Typer(add_completion=False, help="Generate messy synthetic datasets for analytics workflows.")
+log = logging.getLogger("dnr_synth.cli")
 
 
 @app.callback()
@@ -202,6 +206,206 @@ def preview(
 
     _render_datasets(base, limit)
     _render_samples(folder, limit)
+
+
+def _extract_text_from_payload(raw: str) -> str | None:
+    """Extract the 'text' or 'output_text' field from a Responses payload.
+    Returns None if not found. Accepts raw JSON string or already-unwrapped text.
+    """
+    try:
+        s = raw.strip()
+        if not (s.startswith("{") or s.startswith("[")):
+            return raw  # assume it's already plain text/markdown
+        data = json.loads(s)
+        # Fast-path known shapes
+        if isinstance(data, dict):
+            if isinstance(data.get("output_text"), str):
+                return data["output_text"]
+            if isinstance(data.get("content"), list):
+                for ch in data["content"]:
+                    txt = ch.get("text") if isinstance(ch, dict) else None
+                    if isinstance(txt, str):
+                        return txt
+            if isinstance(data.get("response"), dict):
+                inner = data["response"]
+                if isinstance(inner.get("output_text"), str):
+                    return inner["output_text"]
+                if isinstance(inner.get("content"), list):
+                    for ch in inner["content"]:
+                        txt = ch.get("text") if isinstance(ch, dict) else None
+                        if isinstance(txt, str):
+                            return txt
+        if isinstance(data, list):
+            for msg in data:
+                if isinstance(msg, dict) and isinstance(msg.get("content"), list):
+                    for ch in msg["content"]:
+                        txt = ch.get("text") if isinstance(ch, dict) else None
+                        if isinstance(txt, str):
+                            return txt
+        # Recursive search for any 'text' field
+        def _find_text(obj):
+            found: list[str] = []
+            if isinstance(obj, dict):
+                for k, v in obj.items():
+                    if k == "text" and isinstance(v, str):
+                        found.append(v)
+                    else:
+                        found.extend(_find_text(v))
+            elif isinstance(obj, list):
+                for it in obj:
+                    found.extend(_find_text(it))
+            return found
+        texts = _find_text(data)
+        if texts:
+            # Prefer markdown-like (starts with '#' or contains '\n#')
+            md_like = [t for t in texts if t.lstrip().startswith("#") or "\n#" in t]
+            return (md_like[0] if md_like else max(texts, key=len))
+        return None
+    except Exception:
+        return None
+
+
+@app.command("gaps-text")
+def gaps_text(
+    path: Path = typer.Option(None, "--path", help="Path to raw LLM payload (defaults to artifacts/<domain>/gaps/llm_output.txt)"),
+    domain: str = typer.Option(None, "--domain", help="Domain to infer default path when --path is not provided"),
+) -> None:
+    """Render the 'text' section from a raw LLM payload (Responses) as Markdown in the console."""
+    if path is None:
+        if not domain:
+            raise typer.BadParameter("Provide --path or --domain")
+        path = Path("artifacts") / domain / "gaps" / "llm_output.txt"
+    if not path.exists():
+        raise typer.BadParameter(f"Payload file not found at {path}")
+    raw = path.read_text(encoding="utf-8")
+    text = _extract_text_from_payload(raw)
+    if not text:
+        raise typer.BadParameter("Unable to find 'text' content in the payload")
+    console.print(Markdown(text))
+
+
+def _looks_like_gaps(items: object) -> bool:
+    if not isinstance(items, list) or not items:
+        return False
+    good = 0
+    for el in items:
+        if not isinstance(el, dict):
+            continue
+        # Reject obvious wrapper messages
+        if el.get("type") == "message" and "content" in el:
+            return False
+        # Accept if we see any gap-ish fields
+        if any(k in el for k in ("gap_id", "gap_code", "title", "description")):
+            good += 1
+    return good > 0
+
+
+@app.command("gaps-report")
+def gaps_report(
+    domain: str = typer.Option("fintech", "--domain", help="Domain name (e.g., fintech, ecom, saas)"),
+    data: Path = typer.Option(None, "--data", help="Path to parquet data directory (default: data/<domain>)"),
+    artifacts: Path = typer.Option(None, "--artifacts", help="Path to artifacts directory (default: artifacts/<domain>)"),
+    out: Path = typer.Option(None, "--out", help="Output directory for report artifacts (default: artifacts/<domain>/gaps)"),
+    emit_prompt: bool = typer.Option(True, "--emit-prompt", help="Write the constructed LLM prompt to PROMPT_GAPS.md"),
+    run: bool = typer.Option(False, "--run", help="Call LLM (requires OPENAI_API_KEY or LLM_API_KEY)"),
+    model: str = typer.Option("gpt-4o-mini", "--model", help="LLM model (Responses API)"),
+    api_base: str = typer.Option("https://api.openai.com", "--api-base", help="LLM API base (Responses API)"),
+    verbose: bool = typer.Option(False, "--verbose", help="Enable info logging for this command"),
+) -> None:
+    """Build and optionally run an LLM-based gaps report over generated artifacts.
+
+    By default, writes PROMPT_GAPS.md that you can paste into ChatGPT (offline-friendly).
+    With --run, calls the Responses API and writes report.md + data_gaps_report.json if present.
+    """
+    if verbose:
+        logging.basicConfig(level=logging.INFO, format="[%(asctime)s] %(levelname)s %(name)s: %(message)s")
+    domain = domain.lower()
+    data_dir = data or (Path("data") / domain)
+    art_dir = artifacts or (Path("artifacts") / domain)
+    out_dir = out or (art_dir / "gaps")
+    ensure_dir(out_dir)
+
+    if not data_dir.exists():
+        raise typer.BadParameter(f"Data directory {data_dir} does not exist")
+    if not art_dir.exists():
+        raise typer.BadParameter(f"Artifacts directory {art_dir} does not exist")
+
+    log.info(f"Building gaps prompt for domain={domain} data_dir={data_dir} artifacts_dir={art_dir}")
+    prompt = build_prompt(domain, data_dir, art_dir)
+    if emit_prompt:
+        (out_dir / "PROMPT_GAPS.md").write_text(prompt, encoding="utf-8")
+        log.info(f"Wrote prompt to {out_dir / 'PROMPT_GAPS.md'} (size={len(prompt)} chars)")
+
+    if not run:
+        console.print(f"Prompt written to {out_dir / 'PROMPT_GAPS.md'}")
+        console.print("Run with --run to call the LLM, or paste into ChatGPT.")
+        return
+
+    # Resolve API key lazily to avoid env dependency if not running
+    import os as _os
+    # Best-effort: load .env.local if present
+    try:
+        env_path = Path(".env.local")
+        if env_path.exists():
+            log.info("Loading .env.local for API keys")
+            for line in env_path.read_text(encoding="utf-8").splitlines():
+                s = line.strip()
+                if not s or s.startswith("#") or "=" not in s:
+                    continue
+                k, v = s.split("=", 1)
+                k = k.strip(); v = v.strip().strip('"').strip("'")
+                if k and (k not in _os.environ or _os.environ[k] == ""):
+                    _os.environ[k] = v
+    except Exception:
+        pass
+    used_var = None
+    api_key = None
+    if _os.environ.get("LLM_API_KEY"):
+        api_key = _os.environ.get("LLM_API_KEY")
+        used_var = "LLM_API_KEY"
+    elif _os.environ.get("OPENAI_API_KEY"):
+        api_key = _os.environ.get("OPENAI_API_KEY")
+        used_var = "OPENAI_API_KEY"
+    if not api_key:
+        raise typer.BadParameter("Missing API key. Set LLM_API_KEY or OPENAI_API_KEY.")
+    log.info(f"Resolved API key from {used_var}")
+
+    try:
+        console.print("Calling LLM to generate report…")
+        log.info(f"LLM request model={model} api_base={api_base} prompt_chars={len(prompt)}")
+        raw = run_llm(prompt, model=model, api_base=api_base, api_key=api_key)
+        log.info(f"LLM response received (size={len(raw)} chars)")
+    except Exception as e:
+        raise typer.BadParameter(f"LLM request failed: {e}")
+
+    md, gaps = split_outputs(raw)
+    if md:
+        (out_dir / "report.md").write_text(md, encoding="utf-8")
+        console.print(f"Wrote markdown report: {out_dir / 'report.md'}")
+        log.info(f"Wrote markdown report {out_dir / 'report.md'}")
+
+    # Only accept sidecar if it looks like a gaps list; otherwise try re-unwrapping and fallback
+    final_gaps: list[dict] = []
+    if gaps and _looks_like_gaps(gaps):
+        final_gaps = gaps  # type: ignore
+    else:
+        md2, gaps2 = split_outputs(raw)
+        if gaps2 and _looks_like_gaps(gaps2):
+            final_gaps = gaps2  # type: ignore
+
+    if final_gaps:
+        write_json(final_gaps, out_dir / "data_gaps_report.json")
+        console.print(f"Wrote JSON sidecar: {out_dir / 'data_gaps_report.json'}")
+        log.info(f"Wrote JSON sidecar {out_dir / 'data_gaps_report.json'} with {len(final_gaps)} items")
+        # Do not pretty-print or export; sidecar contains full details
+    else:
+        # Fallback: write raw output for inspection
+        (out_dir / "llm_output.txt").write_text(raw, encoding="utf-8")
+        console.print(f"[yellow]Wrote raw output: {out_dir / 'llm_output.txt'}")
+        log.info(f"Wrote raw LLM output to {out_dir / 'llm_output.txt'}")
+
+
+    # gaps-preview removed; focusing on report.md and JSON sidecar only
 
 
 @app.command()

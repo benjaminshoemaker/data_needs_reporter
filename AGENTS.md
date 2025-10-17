@@ -35,9 +35,8 @@
 - Optional: call an LLM via OpenAI Responses API (requires env key):
   - `poetry run dnr-synth gaps-report --domain fintech --run`
   - API key resolution: `LLM_API_KEY` or `OPENAI_API_KEY`; override API base via `--api-base`.
-  - Writes `report.md` and `data_gaps_report.json` when present; otherwise `llm_output.txt` for inspection.
+  - Writes `report.md`, `report_text.md` (raw markdown from the LLM payload), and `data_gaps_report.json` when provided; otherwise saves raw output to `llm_output.txt`.
   - Increase request timeout for slower models via `--timeout-s` (default 120s).
-  - Sidecar JSON contains the full details; no pretty printing is performed by the CLI.
 
 ### Legacy Gap Report
 - Removed. The legacy datagap_report tool and example fixtures were deleted to simplify the repo and focus on data generation and grounded samples.

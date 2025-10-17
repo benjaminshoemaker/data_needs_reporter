@@ -5,6 +5,7 @@ artifacts/**
 data/**
 dbt_*/
 domains/
+!dnr_synth/domains/
 report*.md
 report*.html
 *.pdf

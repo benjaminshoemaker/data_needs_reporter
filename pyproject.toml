@@ -5,7 +5,9 @@ description = "Synthetic data generator and evaluator for Data Needs Reporter de
 authors = ["Data Needs Reporter <noreply@example.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "dnr_synth"}]
+packages = [
+  { include = "dnr_synth*" }
+]
 
 [[tool.poetry.include]]
 path = "templates"

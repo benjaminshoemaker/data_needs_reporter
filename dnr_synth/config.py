@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Dict, Literal, Optional
 
 import numpy as np
-from pydantic import BaseModel, ConfigDict, Field, validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 from .utils import load_yaml
 
@@ -37,7 +37,7 @@ class NullSpike(BaseModel):
     when: str
     where: str | None = None
 
-    @validator("when")
+    @field_validator("when")
     def validate_when(cls, value: str) -> str:
         parts = value.split("/")
         if len(parts) != 2:

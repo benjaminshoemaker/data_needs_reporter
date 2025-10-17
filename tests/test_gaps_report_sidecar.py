@@ -30,6 +30,7 @@ def test_gaps_report_writes_sidecar_and_report(monkeypatch, tmp_path: Path):
     )
 
     captured = {}
+    monkeypatch.setenv("OPENAI_API_KEY", "dummy")
 
     def fake_run_llm(prompt: str, model: str, api_base: str, api_key: str, timeout_s: float = 0) -> str:  # noqa
         captured["timeout_s"] = timeout_s

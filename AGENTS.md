@@ -28,6 +28,16 @@
   - Save outputs to `artifacts/fintech/nl_queries.json` and `artifacts/fintech/slack_threads.json`
 - Preview: `poetry run dnr-synth preview fintech`
 
+### Gaps Report (LLM prompt & optional run)
+- Build an LLM-ready gaps analysis prompt from generated artifacts:
+  - `poetry run dnr-synth gaps-report --domain fintech`
+  - Defaults: data `data/<domain>`, artifacts `artifacts/<domain>`, writes to `artifacts/<domain>/gaps/PROMPT_GAPS.md`.
+- Optional: call an LLM via OpenAI Responses API (requires env key):
+  - `poetry run dnr-synth gaps-report --domain fintech --run`
+  - API key resolution: `LLM_API_KEY` or `OPENAI_API_KEY`; override API base via `--api-base`.
+  - Writes `report.md` and `data_gaps_report.json` when present; otherwise `llm_output.txt` for inspection.
+  - Sidecar JSON contains the full details; no pretty printing is performed by the CLI.
+
 ### Legacy Gap Report
 - Removed. The legacy datagap_report tool and example fixtures were deleted to simplify the repo and focus on data generation and grounded samples.
 

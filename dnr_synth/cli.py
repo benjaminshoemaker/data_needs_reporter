@@ -380,10 +380,15 @@ def gaps_report(
         raise typer.BadParameter(f"LLM request failed: {e}")
 
     md, gaps = split_outputs(raw)
+    text_payload = _extract_text_from_payload(raw)
     if md:
         (out_dir / "report.md").write_text(md, encoding="utf-8")
         console.print(f"Wrote markdown report: {out_dir / 'report.md'}")
         log.info(f"Wrote markdown report {out_dir / 'report.md'}")
+
+    if text_payload:
+        (out_dir / "report_text.md").write_text(text_payload, encoding="utf-8")
+        log.info(f"Wrote raw text markdown {out_dir / 'report_text.md'}")
 
     # Only accept sidecar if it looks like a gaps list; otherwise try re-unwrapping and fallback
     final_gaps: list[dict] = []

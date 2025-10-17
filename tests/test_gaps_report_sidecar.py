@@ -25,7 +25,7 @@ def test_gaps_report_writes_sidecar_and_report(monkeypatch, tmp_path: Path):
 
     # Mock LLM output to include markdown + JSON code fence with gaps
     payload = (
-        "# Exec Report\n\n...\n\n"
+        "# Exec Report\n\nSection...\n\n"
         "```json\n{\n  \"gaps\": [ {\n    \"gap_id\": \"G1\", \"type\": \"JOIN\", \"title\": \"A\", \"priority_score\": 90\n  } ]\n}\n```"
     )
 
@@ -60,3 +60,7 @@ def test_gaps_report_writes_sidecar_and_report(monkeypatch, tmp_path: Path):
     data = json.loads(sidecar.read_text())
     assert isinstance(data, list) and data and data[0]["gap_id"] == "G1"
     assert captured["timeout_s"] == 120.0
+
+    report_text = out_dir / "report_text.md"
+    assert report_text.exists(), "report_text.md should be written"
+    assert "Exec Report" in report_text.read_text()

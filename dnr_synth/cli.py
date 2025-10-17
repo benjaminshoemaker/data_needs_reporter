@@ -310,6 +310,7 @@ def gaps_report(
     run: bool = typer.Option(False, "--run", help="Call LLM (requires OPENAI_API_KEY or LLM_API_KEY)"),
     model: str = typer.Option("gpt-4o-mini", "--model", help="LLM model (Responses API)"),
     api_base: str = typer.Option("https://api.openai.com", "--api-base", help="LLM API base (Responses API)"),
+    timeout_s: float = typer.Option(120.0, "--timeout-s", help="Timeout in seconds for the LLM request"),
     verbose: bool = typer.Option(False, "--verbose", help="Enable info logging for this command"),
 ) -> None:
     """Build and optionally run an LLM-based gaps report over generated artifacts.
@@ -373,7 +374,7 @@ def gaps_report(
     try:
         console.print("Calling LLM to generate report…")
         log.info(f"LLM request model={model} api_base={api_base} prompt_chars={len(prompt)}")
-        raw = run_llm(prompt, model=model, api_base=api_base, api_key=api_key)
+        raw = run_llm(prompt, model=model, api_base=api_base, api_key=api_key, timeout_s=timeout_s)
         log.info(f"LLM response received (size={len(raw)} chars)")
     except Exception as e:
         raise typer.BadParameter(f"LLM request failed: {e}")

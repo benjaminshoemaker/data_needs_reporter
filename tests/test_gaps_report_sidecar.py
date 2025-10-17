@@ -29,7 +29,10 @@ def test_gaps_report_writes_sidecar_and_report(monkeypatch, tmp_path: Path):
         "```json\n{\n  \"gaps\": [ {\n    \"gap_id\": \"G1\", \"type\": \"JOIN\", \"title\": \"A\", \"priority_score\": 90\n  } ]\n}\n```"
     )
 
-    def fake_run_llm(prompt: str, model: str, api_base: str, api_key: str) -> str:  # noqa
+    captured = {}
+
+    def fake_run_llm(prompt: str, model: str, api_base: str, api_key: str, timeout_s: float = 0) -> str:  # noqa
+        captured["timeout_s"] = timeout_s
         return payload
     # Patch the symbol used in CLI (imported binding)
     import dnr_synth.cli as cli_mod
@@ -56,3 +59,4 @@ def test_gaps_report_writes_sidecar_and_report(monkeypatch, tmp_path: Path):
     assert sidecar.exists(), "data_gaps_report.json should be written"
     data = json.loads(sidecar.read_text())
     assert isinstance(data, list) and data and data[0]["gap_id"] == "G1"
+    assert captured["timeout_s"] == 120.0

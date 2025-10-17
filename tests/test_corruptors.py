@@ -44,8 +44,8 @@ def test_duplicates_add_rows() -> None:
     df = pd.DataFrame(
         {
             "id": [f"row_{i}" for i in range(50)],
-            "event_time": pd.date_range("2025-01-01", periods=50, freq="H"),
-            "ingested_at": pd.date_range("2025-01-01", periods=50, freq="H"),
+            "event_time": pd.date_range("2025-01-01", periods=50, freq="h"),
+            "ingested_at": pd.date_range("2025-01-01", periods=50, freq="h"),
             "ds": ["2025-01-01"] * 50,
         }
     )
@@ -57,8 +57,8 @@ def test_duplicates_add_rows() -> None:
 def test_lateness_adds_ingest_lag() -> None:
     df = pd.DataFrame(
         {
-            "event_time": pd.date_range("2025-01-01", periods=10, freq="H"),
-            "ingested_at": pd.date_range("2025-01-01", periods=10, freq="H"),
+            "event_time": pd.date_range("2025-01-01", periods=10, freq="h"),
+            "ingested_at": pd.date_range("2025-01-01", periods=10, freq="h"),
         }
     )
     result = lateness.add_lag(df, mean=5, sd=2, rng=_rng())

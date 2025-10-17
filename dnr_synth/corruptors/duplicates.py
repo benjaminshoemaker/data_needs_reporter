@@ -34,7 +34,9 @@ def add(
         if "ds" in duplicates.columns:
             duplicates["ds"] = pd.to_datetime(duplicates["event_time"]).dt.date.astype(str)
     duplicates["is_duplicate"] = True
-    result = pd.concat([df, duplicates], ignore_index=True)
+    # Ensure no NaNs by adding the flag to the original frame before concat
     if "is_duplicate" not in df.columns:
-        result["is_duplicate"] = result["is_duplicate"].fillna(False)
+        df = df.copy()
+        df["is_duplicate"] = False
+    result = pd.concat([df, duplicates], ignore_index=True)
     return result

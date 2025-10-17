@@ -36,6 +36,7 @@
   - `poetry run dnr-synth gaps-report --domain fintech --run`
   - API key resolution: `LLM_API_KEY` or `OPENAI_API_KEY`; override API base via `--api-base`.
   - Writes `report.md` and `data_gaps_report.json` when present; otherwise `llm_output.txt` for inspection.
+  - Increase request timeout for slower models via `--timeout-s` (default 120s).
   - Sidecar JSON contains the full details; no pretty printing is performed by the CLI.
 
 ### Legacy Gap Report

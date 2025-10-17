@@ -171,7 +171,13 @@ def build_prompt(domain: str, data_dir: Path, artifacts_dir: Path, max_attach_ch
     return "\n\n".join(filter(None, sections))
 
 
-def run_llm(prompt: str, model: str, api_base: str, api_key: str) -> str:
+def run_llm(
+    prompt: str,
+    model: str,
+    api_base: str,
+    api_key: str,
+    timeout_s: float = 60.0,
+) -> str:
     """Optional: call OpenAI Responses API. Returns raw text output.
     Import httpx lazily to avoid mandatory dependency at import time.
     """
@@ -181,7 +187,7 @@ def run_llm(prompt: str, model: str, api_base: str, api_key: str) -> str:
         raise RuntimeError("httpx not installed; cannot run LLM. Install httpx or use --emit-prompt.") from e
     headers = {"Authorization": f"Bearer {api_key}"}
     payload: Dict[str, Any] = {"model": model, "input": prompt}
-    with httpx.Client(timeout=60) as client:
+    with httpx.Client(timeout=timeout_s) as client:
         resp = client.post(api_base.rstrip("/") + "/v1/responses", headers=headers, json=payload)
         resp.raise_for_status()
     data = resp.json()

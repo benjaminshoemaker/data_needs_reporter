@@ -21,6 +21,7 @@
   - `poetry run dnr-synth init fintech`
   - `poetry run dnr-synth generate --config domains/fintech/config.yaml --seed 4242`
   - `poetry run dnr-synth evaluate --domain fintech`
+    - Outputs `health_profile.json` and an executive-style `health_profile.md` (summary, key findings, recommended actions, glossary, appendix tables).
 - Grounded samples (no network):
   - `poetry run dnr-synth sample --domain fintech --data data/fintech --dbt dbt_fintech --seed 4242`
 - Manual prompts (use ChatGPT, save JSON back):
@@ -37,6 +38,9 @@
   - API key resolution: `LLM_API_KEY` or `OPENAI_API_KEY`; override API base via `--api-base`.
   - Writes `report.md`, `report_text.md` (raw markdown from the LLM payload), and `data_gaps_report.json` when provided; otherwise saves raw output to `llm_output.txt`.
   - Increase request timeout for slower models via `--timeout-s` (default 120s).
+- Reset generated datasets & artifacts:
+  - `poetry run dnr-synth clean --domain fintech --yes`
+  - Use `--all` to wipe every domain. Removes `data/<domain>`, `artifacts/<domain>` (except `PROMPT_*.md`, `nl_queries.json`, `slack_threads.json`), and top-level `report*.md` files to start fresh.
 
 ### Legacy Gap Report
 - Removed. The legacy datagap_report tool and example fixtures were deleted to simplify the repo and focus on data generation and grounded samples.

@@ -39,6 +39,13 @@ console = Console()
 app = typer.Typer(add_completion=False, help="Generate messy synthetic datasets for analytics workflows.")
 log = logging.getLogger("dnr_synth.cli")
 
+ARTIFACT_FILES_TO_KEEP = {
+    "PROMPT_NL_QUERIES.md",
+    "PROMPT_SLACK_THREADS.md",
+    "nl_queries.json",
+    "slack_threads.json",
+}
+
 
 @app.callback()
 def _meta(version: bool = typer.Option(False, "--version", help="Show version and exit")) -> None:
@@ -207,6 +214,87 @@ def preview(
     _render_datasets(base, limit)
     _render_samples(folder, limit)
 
+
+@app.command("clean")
+def clean_command(
+    domain: list[str] = typer.Option(None, "--domain", help="Domain(s) whose generated artifacts should be removed"),
+    all_domains: bool = typer.Option(False, "--all", help="Remove data/artifacts for every domain"),
+    yes: bool = typer.Option(False, "--yes", help="Skip confirmation prompt"),
+) -> None:
+    """Remove generated data, artifacts, and reports so you can start fresh."""
+
+    targets: list[Path] = []
+    data_root = Path("data")
+    artifacts_root = Path("artifacts")
+
+    if all_domains:
+        if data_root.exists():
+            targets.extend(p for p in data_root.iterdir() if p.is_dir())
+        if artifacts_root.exists():
+            targets.extend(p for p in artifacts_root.iterdir() if p.is_dir())
+    elif domain:
+        for d in domain:
+            if not d.strip():
+                continue
+            if data_root.exists():
+                targets.append(data_root / d)
+            if artifacts_root.exists():
+                targets.append(artifacts_root / d)
+    else:
+        raise typer.BadParameter("Provide --domain or --all to specify what should be cleaned")
+
+    extra_reports = [p for p in Path.cwd().glob("report*.md")]
+    targets.extend(extra_reports)
+
+    existing = [p for p in targets if p.exists()]
+    if not existing:
+        console.print("[yellow]Nothing to clean.")
+        return
+
+    console.print("The following paths will be removed:")
+    for path in existing:
+        console.print(f"  - {path}")
+
+    if not yes:
+        confirm = typer.confirm("Proceed with deletion?", abort=True)
+        if not confirm:
+            raise typer.Abort()
+
+    for path in existing:
+        try:
+            if path.is_dir():
+                if _is_artifact_domain_dir(path, artifacts_root):
+                    _clean_artifact_domain_dir(path, ARTIFACT_FILES_TO_KEEP)
+                else:
+                    shutil.rmtree(path, ignore_errors=True)
+            else:
+                path.unlink(missing_ok=True)
+        except Exception as exc:
+            console.print(f"[red]Failed to remove {path}: {exc}")
+        else:
+            console.print(f"[green]Cleaned {path}")
+
+
+def _is_artifact_domain_dir(path: Path, artifacts_root: Path) -> bool:
+    try:
+        return path.resolve().parent == artifacts_root.resolve()
+    except FileNotFoundError:
+        return path.parent == artifacts_root
+
+
+def _clean_artifact_domain_dir(path: Path, keep_files: set[str]) -> None:
+    if not path.exists():
+        return
+    for item in list(path.iterdir()):
+        if item.is_file() and item.name in keep_files:
+            continue
+        if item.is_dir():
+            shutil.rmtree(item, ignore_errors=True)
+        else:
+            item.unlink(missing_ok=True)
+    remaining = list(path.iterdir()) if path.exists() else []
+    if not remaining:
+        path.rmdir()
 
 def _extract_text_from_payload(raw: str) -> str | None:
     """Extract the 'text' or 'output_text' field from a Responses payload.

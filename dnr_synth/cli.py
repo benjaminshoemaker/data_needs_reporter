@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import copy
 import json
 import shutil
 from pathlib import Path
@@ -552,7 +553,7 @@ def _write_domain_config(domain: str, config_path: Path) -> None:
 
 
 def _tweak_config_for_domain(domain: str, base: dict) -> dict:
-    data = json.loads(json.dumps(base))
+    data = copy.deepcopy(base)
     data["domain"] = domain
     data["outputs"]["warehouse"] = f"parquet://./data/{domain}"
     data["outputs"]["dbt_project_dir"] = f"./dbt_{domain}"

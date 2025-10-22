@@ -36,8 +36,14 @@
 - Optional: call an LLM via OpenAI Responses API (requires env key):
   - `poetry run dnr-synth gaps-report --domain fintech --run`
   - API key resolution: `LLM_API_KEY` or `OPENAI_API_KEY`; override API base via `--api-base`.
-  - Writes `report.md`, `report_text.md` (raw markdown from the LLM payload), and `data_gaps_report.json` when provided; otherwise saves raw output to `llm_output.txt`.
+  - Target a different model: `poetry run dnr-synth gaps-report --domain fintech --run --model gpt-5-mini --timeout-s 240`
   - Increase request timeout for slower models via `--timeout-s` (default 120s).
+  - Outputs are written to `artifacts/<domain>/gaps/`:
+    - `PROMPT_GAPS.md` (always)
+    - `report_text.md` (primary report; includes executive summary, deep dives, appendix)
+    - `report.md` (compact version; most readers should rely on `report_text.md`)
+    - `data_gaps_report.json` when the model returns structured gaps
+    - `llm_output.txt` fallback when no JSON sidecar is produced
 - Reset generated datasets & artifacts:
   - `poetry run dnr-synth clean --domain fintech --yes`
   - Use `--all` to wipe every domain. Removes `data/<domain>`, `artifacts/<domain>` (except `PROMPT_*.md`, `nl_queries.json`, `slack_threads.json`), and top-level `report*.md` files to start fresh.
@@ -57,12 +63,15 @@
 - Framework: pytest; files `tests/test_*.py`.
 - Prefer deterministic seeds; synth test data should be small and in‑memory or temp Parquet.
 - Aim for focused unit tests near changed logic (corruptors, evaluators, samplers).
+ - Quick local run: `make test`
+ - CI-equivalent (coverage + warning filters): `make test-ci`
  - Keep tests warning-clean. If a third-party deprecation is unavoidable, add a narrow `pytest.ini` filter for that specific message/module.
 
 ## CI
 - GitHub Actions workflow lives at `.github/workflows/ci.yml`.
 - Uses Poetry to install deps and caches `.venv` keyed by `poetry.lock`.
 - Executes `pytest` with deprecations-as-errors; see `PYTHONWARNINGS` in the workflow for the specific ignore in place for pandas BlockManager deprecation during PyArrow conversion.
+- Local dry-run of the CI job: `make test-ci`
 
 ## Commit & Pull Request Guidelines
 - Commits: imperative, scoped (e.g., `sample: diversify slack scenarios`).
